@@ -461,20 +461,16 @@ void xuLi2D1()
 		
 			
 			outtextxy(15,gocTen+30*8,"HANH TINH 1");
-			outtextxy(150,gocTen+30*8,"388");
-			outtextxy(233,gocTen+30*8,"378");
+			ghiToaDo(388,378,8);
 			
 			outtextxy(15,gocTen+30*9,"HANH TINH 2");
-			outtextxy(150,gocTen+30*9,"400");
-			outtextxy(233,gocTen+30*9,"600");
+			ghiToaDo(400,600,9);
 			
 			outtextxy(15,gocTen+30*10,"HANH TINH 3");
-			outtextxy(150,gocTen+30*10,"1171");
-			outtextxy(233,gocTen+30*10,"591");
+			ghiToaDo(1171,591,10);
 			
 			outtextxy(15,gocTen+30*11,"HANH TINH 4");
-			outtextxy(150,gocTen+30*11,"1150");
-			outtextxy(233,gocTen+30*11,"70");
+			ghiToaDo(1150,70,11);
 			
 			
 			
