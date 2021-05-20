@@ -5,3 +5,10 @@ void Ve_HCN(int x1, int y1, int x2, int y2, int color);
 void elipse(int xcenter,int ycenter,int xradius,int yradius, int color);
 
 void doiMayTinhSangNguoiDung(int xDoi, int yDoi, int x0, int y0, int &xKQ, int &yKQ);
+
+void putpixel5DV(int x, int y, int color);
+
+
+
+void drawCircleMidpoint(int xc, int yc, int r, int color);
+void put8pixel(int xc, int yc, int x, int y, int color);

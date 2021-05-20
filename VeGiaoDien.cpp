@@ -77,6 +77,16 @@ void setDoThi()
 	
 	setcolor(0);
 	rectangle(xdau,ydau,xcuoi,ycuoi);
+	setcolor(0);
+	
+//	for(int i=305;i<=1275;i+=5)
+//	{
+//		line(i,5,i,715);
+//	}
+//	for(int j=5;j<=715;j+=5)
+//	{
+//		line(305,j,1275,j);
+//	}
 	setcolor(15);
 	
 }
@@ -183,6 +193,18 @@ void setGiaoDienHoatDong(int i)
 	taoMangButton(a);
 	drawMenuButton(a);
 	doiMauButton(a[i],mauxanhlachuoi);
+	
+	setcolor(15);
+	
+//	for(int i=305;i<=1275;i+=5)
+//	{
+//		line(i,5,i,715);
+//	}
+//	for(int j=5;j<=715;j+=5)
+//	{
+//		line(305,j,1275,j);
+//	}
+	setcolor(15);
 	
 }
 

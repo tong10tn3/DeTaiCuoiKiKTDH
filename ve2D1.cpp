@@ -150,20 +150,21 @@ void veThienThach(int x, int y, int gocQuay,int mauDuoi)
 	int y1=y-banKinhThienThach-doRongVanh;
 	
 	int x2=x;
-	int y2=y-doRongVanh;
+	int y2=y-banKinhThienThach;
 	
 	int x3=x-banKinhThienThach-doDaiDuoi;
 	int y3=y+banKinhThienThach+doRongVanh;
 	
 	int x4=x;	
-	int y4=y+doRongVanh;
+	int y4=y+banKinhThienThach;
 	
 	int x5=x-(3*(banKinhThienThach+doDaiDuoi)/4);
 	int y5=y;
 	
-	int x6= x5+2;
+	int x6= x5+5;
 	int y6=y5;
 	
+
 	
 	int x1New;
 	int y1New;
@@ -173,7 +174,7 @@ void veThienThach(int x, int y, int gocQuay,int mauDuoi)
 	int y5New;
 	int x6New;
 	int y6New;
-	//int gocQuay=0;
+
 	PhepXoay1Diem(x1,y1,x,y,-gocQuay,x1New,y1New);
 	PhepXoay1Diem(x3,y3,x,y,-gocQuay,x3New,y3New);
 	PhepXoay1Diem(x5,y5,x,y,-gocQuay,x5New,y5New);
@@ -250,12 +251,13 @@ void tinhTienThienThach1(int i)
 	double maTranTT[3][3]={
 		{1,0,0	},
 		{0,1,0	},
-		{500*i/35, 600*i/35, 1}
+		{500*i/31, 600*i/31, 1}
 	};
 	double KQ[1][3];
 	nhan2MaTran(maTranThienThach,maTranTT,KQ,1,3,3);
 	veThienThach(KQ[0][0],KQ[0][1],gocQuay,mauDuoiThienThach1);
 	setbkcolor(mauxanhgiongaokhoaccrush);
+	setcolor(15);
 	ghiToaDo(KQ[0][0],KQ[0][1],6);
 }
 void tinhTienThienThach2(int i)
@@ -271,12 +273,13 @@ void tinhTienThienThach2(int i)
 	double maTranTT[3][3]={
 		{1,0,0	},
 		{0,1,0	},
-		{(xCuoi-xDau)*(i-50)/35, (yCuoi-yDau)*(i-50)/35, 1}
+		{(xCuoi-xDau)*(i-41)/28, (yCuoi-yDau)*(i-41)/28, 1}
 	};
 	double KQ[1][3];
 	nhan2MaTran(maTranThienThach,maTranTT,KQ,1,3,3);
 	veThienThach(KQ[0][0],KQ[0][1],gocQuay,mauDuoiThienThach2);
 	setbkcolor(mauxanhgiongaokhoaccrush);
+	setcolor(15);
 	ghiToaDo(KQ[0][0],KQ[0][1],7);
 	
 }
@@ -285,22 +288,24 @@ void veVeTinh(int x , int y)
 {
 	setcolor(mauCanhVeTinh);
 	circle(x,y,banKinhVeTinh);
+	
 	setfillstyle(SOLID_FILL,mauCanhVeTinh);
-	lineDDA(x,y-banKinhVeTinh,x+3*banKinhVeTinh,y-4*banKinhVeTinh,mauCanhVeTinh);
-	lineDDA(x+banKinhVeTinh,y,x+4*banKinhVeTinh,y-3*banKinhVeTinh,mauCanhVeTinh);
-	lineDDA(x+3*banKinhVeTinh,y-4*banKinhVeTinh,x+4*banKinhVeTinh+1,y-3*banKinhVeTinh+1,mauCanhVeTinh);
+	line(x,y-banKinhVeTinh,x+3*banKinhVeTinh,y-4*banKinhVeTinh);
+	line(x+banKinhVeTinh,y,x+4*banKinhVeTinh,y-3*banKinhVeTinh);
+	line(x+3*banKinhVeTinh,y-4*banKinhVeTinh,x+4*banKinhVeTinh+1,y-3*banKinhVeTinh+1);
+
 	floodfill(x+2*banKinhVeTinh,y-2*banKinhVeTinh, mauCanhVeTinh);
 	
-	lineDDA(x,y-banKinhVeTinh,x-4*banKinhVeTinh,y+3*banKinhVeTinh,mauCanhVeTinh);
-	lineDDA(x+banKinhVeTinh,y,x-3*banKinhVeTinh,y+4*banKinhVeTinh,mauCanhVeTinh);
-	lineDDA(x-4*banKinhVeTinh,y+3*banKinhVeTinh,x-3*banKinhVeTinh+1,y+4*banKinhVeTinh+1,mauCanhVeTinh);
-	floodfill(x-2*banKinhVeTinh,y+2*banKinhVeTinh, mauCanhVeTinh);
+	line(x,y-banKinhVeTinh,x-4*banKinhVeTinh,y+3*banKinhVeTinh);
+	line(x+banKinhVeTinh,y,x-3*banKinhVeTinh,y+4*banKinhVeTinh);
+	line(x-4*banKinhVeTinh,y+3*banKinhVeTinh,x-3*banKinhVeTinh+1,y+4*banKinhVeTinh+1);
+	floodfill(x-2*banKinhVeTinh,y+2*banKinhVeTinh,mauCanhVeTinh);
 	
 	setcolor(mauTamVeTinh);
 	setfillstyle(SOLID_FILL,mauTamVeTinh);
 	pieslice(x,y,0,360,banKinhVeTinh);
 	//setcolor(15);
-	circleBresenham(x,y,banKinhVeTinh,15);
+	
 }
 
 void veHanhTinhKhac()
@@ -366,7 +371,7 @@ void xuLi2D1()
 		double Qo_VT[3][3];
 		int k=0;
 		//TRAI DAT XOAY
-		for(double i=-0.0436;i>-6.29;i-=0.0436)
+		for(double i=-0.0436*2;i>-6.29;i-=0.0436*2)
 		{
 			setactivepage(page);
 			setvisualpage(1-page);
@@ -377,7 +382,7 @@ void xuLi2D1()
 			int xTraiDats;
 			int yTraiDats;
 			PhepXoay1Diem(790,590,790,360,gocQuay*180.0/3.14159,xTraiDats,yTraiDats);
-			outtextxy(1255,365,"X");
+			
 			
 			//VETINH
 			double gocQuayVT=i*7 ;
@@ -402,8 +407,7 @@ void xuLi2D1()
 
 			//VE 
 			setGiaoDienHoatDong(0);
-			lineDDA(790,6,790,714,15);
-			lineDDA(306,360,1274,360,15);
+			
 				//QUYDAO
 			setcolor(15);
 			circleBresenham(790,360,230,15);
@@ -415,11 +419,11 @@ void xuLi2D1()
 			veVeTinh(xVeTinhs1,yVeTinhs1);
 			
 			
-			if(k<=35)
+			if(k<=31)
 			{
 				tinhTienThienThach1(k);	
 			}
-			else if( k>=50)
+			else if( k>=41)
 			{
 				tinhTienThienThach2(k);
 			}
@@ -471,8 +475,11 @@ void xuLi2D1()
 			
 			outtextxy(15,gocTen+30*11,"HANH TINH 4");
 			ghiToaDo(1150,70,11);
-			
-			
+			//HE TRUC TOA DO
+			setcolor(5);
+			line(790,6,790,714);
+			line(306,360,1274,360);
+			setcolor(15);
 			
 		
 			

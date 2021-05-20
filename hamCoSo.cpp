@@ -8,6 +8,21 @@
 #include <graphics.h>
 #define ROUND(a) (int)(a+0.5)
 
+
+void putpixel5DV(int x, int y, int color)
+{
+	setbkcolor(0);
+	setcolor(color);
+	for(int i=x-2;i<=x+2;i++)
+	{
+		for(int j=y-2;j<=y+2;j++)
+		{
+			putpixel(i,j,color);
+		}
+	}
+	
+}
+
 void doiMayTinhSangNguoiDung(int xDoi, int yDoi, int x0, int y0, int &xKQ, int &yKQ)
 {
 	xKQ=(xDoi-x0)/5;
@@ -25,8 +40,8 @@ void lineDDA(int x1,int y1, int x2,int y2,int c){
 	if(abs(dx)>=abs(dy) || abs(dx)<=abs(dy)){
 		float x=x1;
 		float y=y1;
-		for(i=0;i<=abs(step);i++){
-			putpixel(round(x),round(y),c);
+		for(i=0;i<=abs(step);i+=1){
+			putpixel5DV(round(x),round(y),c);
 			x+=inc_x;
 			y+=inc_y;
 		}
@@ -36,30 +51,29 @@ void lineDDA(int x1,int y1, int x2,int y2,int c){
 void ve8diem(int x0,int y0,int x, int y, int color)
 {
 
-  putpixel( x0 + x , y0 + y ,color);
+  putpixel5DV( x0 + x , y0 + y ,color);
 
-  putpixel( x0 - x , y0 + y ,color);
+  putpixel5DV( x0 - x , y0 + y ,color);
 
-  putpixel( x0 + x , y0 - y ,color);
+  putpixel5DV( x0 + x , y0 - y ,color);
 
-  putpixel( x0 - x , y0 - y ,color);
+  putpixel5DV( x0 - x , y0 - y ,color);
 
-  putpixel( x0 + y , y0 + x ,color);
+  putpixel5DV( x0 + y , y0 + x ,color);
 
-  putpixel( x0 - y , y0 + x ,color);
+  putpixel5DV( x0 - y , y0 + x ,color);
 
-  putpixel( x0 + y , y0 - x ,color);
+  putpixel5DV( x0 + y , y0 - x ,color);
 
-  putpixel( x0 - y , y0 - x ,color);
+  putpixel5DV( x0 - y , y0 - x ,color);
 
 }
 
 void circleBresenham(int x0,int y0,int r, int color)
 {
-
   int x=0;int y=r;
 
-  int p=3-2*r;
+  int p=(3-2*r) ;
 
   while (x<=y)
 
@@ -67,7 +81,7 @@ void circleBresenham(int x0,int y0,int r, int color)
 
    ve8diem(x0,y0,x,y,color);
 
-   if(p<0) p=p+4*x+6;
+   if(p<0) p=p+(4*x+6);
 
    else
 
@@ -75,11 +89,11 @@ void circleBresenham(int x0,int y0,int r, int color)
 
             p=p+4*(x-y)+10;
 
-            y=y-1;
+            y=y-2;
 
        }
 
-   x=x+1;
+   x=x+2;
 
   }
 
@@ -93,17 +107,17 @@ void elipse(int xcenter,int ycenter,int xradius,int yradius, int color)
     c=c*c; p=2*c-2*yradius+1;
     while (c*x<=y)
         {
-            putpixel(xcenter+x,ycenter+y,color);
-            putpixel(xcenter-x,ycenter+y,color);
-            putpixel(xcenter+x,ycenter-y,color);
-            putpixel(xcenter-x,ycenter-y,color);
+            putpixel5DV(xcenter+x,ycenter+y,color);
+            putpixel5DV(xcenter-x,ycenter+y,color);
+            putpixel5DV(xcenter+x,ycenter-y,color);
+            putpixel5DV(xcenter-x,ycenter-y,color);
             if (p<0) p += 2*c*(2*x+3);
             else
                 {
                     p +=4*(1-y)+2*c*(2*x+3);
-                    y--;
+                    y-=2;
                 }
-            x++;
+            x+=2;
         }
    
     y=0;x=xradius;
@@ -111,17 +125,17 @@ void elipse(int xcenter,int ycenter,int xradius,int yradius, int color)
     c=c*c; p=2*c-2*xradius+1;
     while (c*y<=x)
         {
-            putpixel(xcenter+x,ycenter+y,color);
-            putpixel(xcenter-x,ycenter+y,color);
-            putpixel(xcenter+x,ycenter-y,color);
-            putpixel(xcenter-x,ycenter-y,color);
+            putpixel5DV(xcenter+x,ycenter+y,color);
+            putpixel5DV(xcenter-x,ycenter+y,color);
+            putpixel5DV(xcenter+x,ycenter-y,color);
+            putpixel5DV(xcenter-x,ycenter-y,color);
             if (p<0) p +=2*c*(2*y+3);
             else
                 {
                     p +=4*(1-x)+2*c*(2*y+3);
-                    x--;
+                    x-=2;
                 }
-            y++;
+            y+=2;
         }
 }
 
@@ -133,3 +147,55 @@ void Ve_HCN(int x1, int y1, int x2, int y2, int color)
     lineDDA(x2,y2,x2,y1,color);
     lineDDA(x2,y2,x1,y2,color);
 }
+
+
+void put8pixel(int xc, int yc, int x, int y, int color)
+{
+    putpixel5DV(x + xc, y + yc, color);
+    putpixel5DV(-x + xc, y + yc, color);
+    putpixel5DV(x + xc, -y + yc, color);
+    putpixel5DV(-x + xc, -y + yc, color);
+    putpixel5DV( y + xc, x + yc, color);
+    putpixel5DV(-y + xc, x + yc, color);
+    putpixel5DV(y + xc, -x + yc, color);
+    putpixel5DV(-y + xc, -x + yc, color);
+}
+
+
+void drawCircleMidpoint(int xc, int yc, int r, int color)
+{
+    int x = 0, y = r;
+    int f = 1 - r;
+
+    put8pixel(xc, yc, x, y, color);
+
+    while (x < y)
+    {
+        if (f < 0) f += (x << 1) + 3;
+        else
+        {
+            y-=5;
+            f += ((x - y) << 1) + 5;
+        }
+        x+=5;
+        put8pixel(xc, yc, x, y, color);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
