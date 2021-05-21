@@ -1,13 +1,15 @@
 #include <math.h>
 #include <conio.h>
-
+#include<iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <dos.h>
 #include <string.h>
 #include <graphics.h>
+#include <sstream>
+#include <time.h>
 #define ROUND(a) (int)(a+0.5)
-
+using namespace std;
 
 void putpixel5DV(int x, int y, int color)
 {
@@ -180,6 +182,39 @@ void drawCircleMidpoint(int xc, int yc, int r, int color)
         x+=5;
         put8pixel(xc, yc, x, y, color);
     }
+}
+void hienThiToaDo(double x, double y, int i)
+{
+	double xO=790;
+	double yO=360;
+	
+	double gocTen=260;
+	double toaDoX= roundf(((x-xO)/5.0) * 100) / 100;
+	double toaDoY= roundf(((y-yO)/5.0)* 100) / -100;
+
+	ostringstream convertX;
+	convertX<<toaDoX;
+	string toaDoXString=convertX.str();
+	char* toaDoXChar = new char[toaDoXString.size()];
+	copy(toaDoXString.begin(), toaDoXString.end(), toaDoXChar);
+	toaDoXChar[toaDoXString.size()] = '\0';
+	
+	settextstyle(DEFAULT_FONT,0, 1);
+	outtextxy(150,gocTen+30*i,toaDoXChar);
+	settextstyle(DEFAULT_FONT,0,1);
+		
+		
+		
+	ostringstream convertY;
+	convertY<<toaDoY;
+	string toaDoYString=convertY.str();
+		
+	char* toaDoYChar = new char[toaDoYString.size()];
+	copy(toaDoYString.begin(), toaDoYString.end(), toaDoYChar);
+	toaDoYChar[toaDoYString.size()] = '\0';
+	settextstyle(DEFAULT_FONT,0, 1);
+	outtextxy(233,gocTen+30*i,toaDoYChar);
+	settextstyle(DEFAULT_FONT,0,1);
 }
 
 

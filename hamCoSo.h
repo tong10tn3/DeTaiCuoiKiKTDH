@@ -12,3 +12,4 @@ void putpixel5DV(int x, int y, int color);
 
 void drawCircleMidpoint(int xc, int yc, int r, int color);
 void put8pixel(int xc, int yc, int x, int y, int color);
+void hienThiToaDo(double x, double y, int i);
