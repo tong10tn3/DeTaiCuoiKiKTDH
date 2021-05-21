@@ -203,7 +203,7 @@ void veThienThach(int x, int y, int gocQuay,int mauDuoi)
 	
 
 }
-void ghiToaDo(int x, int y, int i)
+void ghiToaDo( int x, int y, int i)
 {
 	int xO=790;
 	int yO=360;

@@ -2,6 +2,7 @@
 #include<iostream>
 #include "hamCoSo.h"
 #include "ve2D1.h"
+#include "ve2D2.h"
 #include<fstream>
 #include<math.h>
 #include<conio.h>
@@ -14,7 +15,9 @@ int main()//int argc, char *argv[]
 {
 	initwindow(1280+8,720+12);
 	setGiaoDien();
-	xuLi();
+	//xuLi();
+	tinhTien();
+	//outtextxy(15,500,"VAT");
 //	putpixel5DV(500,200,12);
 	//lineDDA(500,200,700,300,12);
 	
