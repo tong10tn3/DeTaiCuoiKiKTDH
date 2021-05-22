@@ -20,6 +20,7 @@ using namespace std;
 #define VOCUNG 999
 #include "VeGiaoDien.h"
 #include "ve2D1.h"
+#include "ve2D2.h"
 using namespace std;
 
 // =============== THIET LAP GIAO DIEN ================
@@ -230,6 +231,7 @@ void batDkClickChuot(button &a,int x,int y,button b[])
 		else if(xtam>=155&&xtam<=280&&ytam>=27&&ytam<=97)
 		{
 			cout<<"Tong 2D 2"<<endl;
+			tinhTien();
 		}
 		else if(xtam>=25&&xtam<=150&&ytam>=119&&ytam<=189)
 		{
