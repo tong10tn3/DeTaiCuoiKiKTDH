@@ -86,6 +86,7 @@ void VePhanCach(double x,double y,int color){
 }
 
 void tinhTien(){
+	boolean kt=false;
 	while(true){
 		
 	//ma tran 2 diem ve thung xe sau
@@ -129,7 +130,7 @@ void tinhTien(){
 		setcolor(15);
 		setactivepage(page);
 		setvisualpage(1-page);
-		setGiaoDien();
+		setGiaoDienHoatDong(1);
 		//duong di
 		setfillstyle(1,8);
 		bar(306,480,1275,590);
@@ -241,8 +242,34 @@ void tinhTien(){
 		hienThiToaDo(mt12[0][0]+5,mt11[0][1],13);
 		outtextxy(15,260+30*14,"thung xe 4");
 		hienThiToaDo(mt12[0][0]+5,mt12[0][1],14);
+		
+		if(ismouseclick(WM_LBUTTONUP))
+			{
+				int xtam; int ytam;
+				getmouseclick(WM_LBUTTONUP,xtam,ytam);
+				clearmouseclick(WM_LBUTTONUP);
+				if(xtam>=155&&xtam<=280&&ytam>=27&&ytam<=97)
+				{
+					kt=true;
+					
+					setactivepage(NULL);
+					setvisualpage(NULL);
+					setDoThi();
+					setThongTin();
+					break;
+				}
+				else
+				{
+					cout<<xtam<<"\t"<<ytam<<endl;
+				}
+			}
+		
 		page=1-page;
 		delay(0.1);
+		}
+		if(kt==true)
+		{
+			break;
 		}
 		}
 }
