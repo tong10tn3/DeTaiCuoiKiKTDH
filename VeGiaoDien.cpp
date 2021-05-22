@@ -180,22 +180,22 @@ void setGiaoDienHoatDong(int i)
 {
 	setfillstyle(SOLID_FILL,MauNenDoThi);
 	bar(0, 0, 1280, 720);
-	
 	setThongTin();
 	setMenu();
+	
 	int xdau=305;	int xcuoi=1275;
 	int ydau=5;		int ycuoi=715;
-	setfillstyle(SOLID_FILL,0);
-	bar(xdau,ydau,xcuoi,ycuoi);
-	setcolor(15);
+	
+	setfillstyle(SOLID_FILL,15);
+	
+	if(i!=1)
+	{
+		bar(xdau,ydau,xcuoi,ycuoi);
+	}
+	setcolor(0);
 	rectangle(xdau,ydau,xcuoi,ycuoi);
-	
-	button a[11];
-	taoMangButton(a);
-	drawMenuButton(a);
-	doiMauButton(a[i],mauxanhlachuoi);
-	
 	setcolor(15);
+
 	
 //	for(int i=305;i<=1275;i+=5)
 //	{
@@ -205,6 +205,11 @@ void setGiaoDienHoatDong(int i)
 //	{
 //		line(305,j,1275,j);
 //	}
+
+	button a[11];
+	taoMangButton(a);
+	drawMenuButton(a);
+	doiMauButton(a[i],mauxanhlachuoi);
 	setcolor(15);
 	
 }

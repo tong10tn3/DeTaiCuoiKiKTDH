@@ -131,6 +131,7 @@ void tinhTien(){
 		setactivepage(page);
 		setvisualpage(1-page);
 		setGiaoDienHoatDong(1);
+		//setGiaoDien();
 		//duong di
 		setfillstyle(1,8);
 		bar(306,480,1275,590);
@@ -146,27 +147,7 @@ void tinhTien(){
 		VePhanCach(720,530,0);
 		VePhanCach(920,530,0);
 		VePhanCach(1120,530,0);
-		//Ve banh xe thu 1
-		circleBresenham(mt51[0][0],mt51[0][1],20,0);
-		setfillstyle(1,0);
-		floodfill(mt51[0][0],mt51[0][1],0);
-		circleBresenham(mt51[0][0],mt51[0][1],12,15);
-		nhan2MaTran(maTranBanhXe1,maTranTinhTien,mt51,1,3,3);
-		nhan2MaTran(mt51,maTranDonVi,maTranBanhXe1,1,3,3);
-		//Ve banh xe thu 2
-		circleBresenham(mt52[0][0],mt52[0][1],20,0);
-		setfillstyle(1,0);
-		floodfill(mt52[0][0],mt52[0][1],0);
-		circleBresenham(mt52[0][0],mt52[0][1],12,15);
-		nhan2MaTran(maTranBanhXe2,maTranTinhTien,mt52,1,3,3);
-		nhan2MaTran(mt52,maTranDonVi,maTranBanhXe2,1,3,3);
-		//Ve banh xe thu 3
-		circleBresenham(mt53[0][0],mt53[0][1],20,0);
-		setfillstyle(1,0);
-		floodfill(mt53[0][0],mt53[0][1],0);
-		circleBresenham(mt53[0][0],mt53[0][1],12,15);
-		nhan2MaTran(maTranBanhXe3,maTranTinhTien,mt53,1,3,3);
-		nhan2MaTran(mt53,maTranDonVi,maTranBanhXe3,1,3,3);
+		
 		//Ve thung xe sau
 		Ve_HCN(mt11[0][0],mt11[0][1],mt12[0][0],mt12[0][1],0);
 		setfillstyle(1,14);
@@ -242,6 +223,30 @@ void tinhTien(){
 		hienThiToaDo(mt12[0][0]+5,mt11[0][1],13);
 		outtextxy(15,260+30*14,"thung xe 4");
 		hienThiToaDo(mt12[0][0]+5,mt12[0][1],14);
+		
+		
+		//Ve banh xe thu 1
+		circleBresenham(mt51[0][0],mt51[0][1],20,0);
+		setfillstyle(1,0);
+		floodfill(mt51[0][0],mt51[0][1],0);
+		circleBresenham(mt51[0][0],mt51[0][1],12,15);
+		nhan2MaTran(maTranBanhXe1,maTranTinhTien,mt51,1,3,3);
+		nhan2MaTran(mt51,maTranDonVi,maTranBanhXe1,1,3,3);
+		//Ve banh xe thu 2
+		circleBresenham(mt52[0][0],mt52[0][1],20,0);
+		setfillstyle(1,0);
+		floodfill(mt52[0][0],mt52[0][1],0);
+		circleBresenham(mt52[0][0],mt52[0][1],12,15);
+		nhan2MaTran(maTranBanhXe2,maTranTinhTien,mt52,1,3,3);
+		nhan2MaTran(mt52,maTranDonVi,maTranBanhXe2,1,3,3);
+		//Ve banh xe thu 3
+		circleBresenham(mt53[0][0],mt53[0][1],20,0);
+		setfillstyle(1,0);
+		floodfill(mt53[0][0],mt53[0][1],0);
+		circleBresenham(mt53[0][0],mt53[0][1],12,15);
+		nhan2MaTran(maTranBanhXe3,maTranTinhTien,mt53,1,3,3);
+		nhan2MaTran(mt53,maTranDonVi,maTranBanhXe3,1,3,3);
+		
 		
 		if(ismouseclick(WM_LBUTTONUP))
 			{
