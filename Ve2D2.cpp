@@ -18,65 +18,12 @@ double maTranDonVi[3][3]=
 				{0,1,0},
 				{0,0,1}
 			};
-
-
-//void veOtoTai(){
-//	//thùng xe sau
-//	Ve_HCN(950, 400, 1250, 500, 0);
-//	setfillstyle(1,14);
-//	floodfill(955, 405,0);
-//	//bánh xe truoc cua thung
-//	circle(1030,500,20);
-//	circle(1030,500,12);
-//	setcolor(15);
-//	line(1018,500,1042,500);
-//	setcolor(0);
-//	setfillstyle(1,7);
-//	floodfill(1030, 500,0);
-//	
-//	//mau lop
-//	setfillstyle(1,0);
-//	floodfill(1043, 501,0);
-//	floodfill(1043, 499,0);
-//	
-//	//bánh xe sau cua thung
-//	circle(1170,500,20);
-//	circle(1170,500,12);
-//	setcolor(15);
-//	line(1158,500,1182,500);
-//	setfillstyle(1,7);
-//	floodfill(1170, 500,0);
-//	//mau lop
-//	setfillstyle(1,0);
-//	floodfill(1183, 501,0);
-//	floodfill(1183, 499,0);
-//	
-//	//dau xe
-//	Ve_HCN(900, 430, 950, 500, 0);
-//	setfillstyle(1,1);
-//	floodfill(901, 431,0);
-//	Ve_HCN(870, 460, 900, 500, 0);
-//	setfillstyle(1,1);
-//	floodfill(871, 461,0);
-//	line(900, 430,870, 460);
-//	
-//	//banh xe dau
-//	circle(910,500,20);
-//	circle(910,500,12);
-//	setcolor(15);
-//	line(898,500,922,500);
-//	setfillstyle(1,7);
-//	floodfill(910, 500,0);
-//	//mau lop
-//	setfillstyle(1,0);
-//	floodfill(923, 501,0);
-//	floodfill(894, 498,0);
-//	floodfill(923, 499,0);
-//	
-//	//mau cua kinh
-//	setfillstyle(1,7);
-//	floodfill(895, 449,0);
-//}
+double maTranquay[3][3]=
+	{
+		{1,0,0},
+		{0,1,0},
+		{1/2,1/2, 1}
+	};
 void VePhanCach(double x,double y,int color){
 	setcolor(color);
 	lineDDA(x,y,x+100,y,0);
@@ -84,7 +31,62 @@ void VePhanCach(double x,double y,int color){
 	lineDDA(x,y,x+10,y+7,0);
 	lineDDA(x+100,y,x+100+10,y+7,0);
 }
-
+void canhVat(){
+	double mtnui1[1][3]={306,300,1};
+	double mtnui2[1][3]={450,100,1};
+	double mtnui3[1][3]={600,300,1};
+	double mtnui11[1][3]={500,250,1};
+	double mtnui22[1][3]={600,60,1};
+	double mtnui33[1][3]={700,250,1};
+	double mt1[1][3];
+	double mt2[1][3];
+	double mt3[1][3];
+	double mt11[1][3];
+	double mt22[1][3];
+	double mt33[1][3];
+	double MTTTNui[3][3]=
+			{
+				{1,0,0},
+				{0,1,0},
+				{+350,0,1}
+			};
+	setcolor(0);
+	line(306,300,1700,300);	
+	for(int i=0;i<3;i++){
+		lineDDA(mtnui1[0][0],mtnui1[0][1],mtnui2[0][0],mtnui2[0][1],0);
+		lineDDA(mtnui2[0][0],mtnui2[0][1],mtnui3[0][0],mtnui3[0][1],0);
+		setfillstyle(1,2);
+		floodfill(mtnui2[0][0],mtnui2[0][1]+10,0);
+		nhan2MaTran(mtnui1,MTTTNui,mt1,1,3,3);
+		nhan2MaTran(mtnui2,MTTTNui,mt2,1,3,3);
+		nhan2MaTran(mtnui3,MTTTNui,mt3,1,3,3);
+		mtnui1[0][0]=mt1[0][0];
+		mtnui1[0][1]=mt1[0][1];
+		mtnui2[0][0]=mt2[0][0];
+		mtnui2[0][1]=mt2[0][1];
+		mtnui3[0][0]=mt3[0][0];
+		mtnui3[0][1]=mt3[0][1];
+		lineDDA(306,50,380,195,0);
+		setfillstyle(1,2);
+		floodfill(380-10,195,0);
+		lineDDA(520,200,615,120,0);
+		lineDDA(615,120,715,220,0);
+		setfillstyle(1,2);
+		floodfill(615,130,0);
+		lineDDA(850,160,970,60,0);
+		lineDDA(970,60,1100,175,0);
+		setfillstyle(1,2);
+		floodfill(970,60+10,0);
+		setfillstyle(1,11);
+		floodfill(310,7,0);
+		circleBresenham(715,150,30,0);
+		setfillstyle(1,14);
+		floodfill(715,150,0);
+		setfillstyle(1,2);
+		bar(306,301,1275,480);
+		
+	}
+	}
 void tinhTien(){
 	boolean kt=false;
 	while(true){
@@ -124,30 +126,53 @@ void tinhTien(){
 	double mt53[1][3];
 	int page=0;
 	for(int i=0;i<111;i++){
+		setfillstyle(1,14);
+		floodfill(mt51[0][0],mt51[0][1],0);
 		setcolor(4);
 		line(790,6,790,714);
 		line(306,360,1274,360);
 		setcolor(15);
 		setactivepage(page);
 		setvisualpage(1-page);
+		
 		setGiaoDienHoatDong(1);
+		
 		//setGiaoDien();
 		//duong di
+		
 		setfillstyle(1,8);
 		bar(306,480,1275,590);
 		//le duong
 		setfillstyle(1,2);
 		bar(306,591,1275,800);
-		//bau troi
-		setfillstyle(1,9);
-		bar(306,479,1275,5);
+		canhVat();
 		//giai phan cach
 		VePhanCach(320,530,0);
 		VePhanCach(520,530,0);
 		VePhanCach(720,530,0);
 		VePhanCach(920,530,0);
 		VePhanCach(1120,530,0);
-		
+		//Ve banh xe thu 1
+		circleBresenham(mt51[0][0],mt51[0][1],20,0);
+		setfillstyle(1,0);
+		floodfill(mt51[0][0],mt51[0][1],0);
+		circleBresenham(mt51[0][0],mt51[0][1],12,15);
+		nhan2MaTran(maTranBanhXe1,maTranTinhTien,mt51,1,3,3);
+		nhan2MaTran(mt51,maTranDonVi,maTranBanhXe1,1,3,3);
+		//Ve banh xe thu 2
+		circleBresenham(mt52[0][0],mt52[0][1],20,0);
+		setfillstyle(1,0);
+		floodfill(mt52[0][0],mt52[0][1],0);
+		circleBresenham(mt52[0][0],mt52[0][1],12,15);
+		nhan2MaTran(maTranBanhXe2,maTranTinhTien,mt52,1,3,3);
+		nhan2MaTran(mt52,maTranDonVi,maTranBanhXe2,1,3,3);
+		//Ve banh xe thu 3
+		circleBresenham(mt53[0][0],mt53[0][1],20,0);
+		setfillstyle(1,0);
+		floodfill(mt53[0][0],mt53[0][1],0);
+		circleBresenham(mt53[0][0],mt53[0][1],12,15);
+		nhan2MaTran(maTranBanhXe3,maTranTinhTien,mt53,1,3,3);
+		nhan2MaTran(mt53,maTranDonVi,maTranBanhXe3,1,3,3);
 		//Ve thung xe sau
 		Ve_HCN(mt11[0][0],mt11[0][1],mt12[0][0],mt12[0][1],0);
 		setfillstyle(1,14);
@@ -182,9 +207,6 @@ void tinhTien(){
 		lineDDA(mt21[0][0]+5,mt21[0][1],mt31[0][0]+5,mt31[0][1],0);
 		setfillstyle(1,15);
 		floodfill(mt21[0][0]-5,mt21[0][1]+15,0);
-		//line(305,590,1275,590);
-		line(305,480,mt31[0][0],480);
-		line(1275,480,mt12[0][0],480);
 		
 		setcolor(15);
 		settextstyle(DEFAULT_FONT,0, 1);	
@@ -225,27 +247,6 @@ void tinhTien(){
 		hienThiToaDo(mt12[0][0]+5,mt12[0][1],14);
 		
 		
-		//Ve banh xe thu 1
-		circleBresenham(mt51[0][0],mt51[0][1],20,0);
-		setfillstyle(1,0);
-		floodfill(mt51[0][0],mt51[0][1],0);
-		circleBresenham(mt51[0][0],mt51[0][1],12,15);
-		nhan2MaTran(maTranBanhXe1,maTranTinhTien,mt51,1,3,3);
-		nhan2MaTran(mt51,maTranDonVi,maTranBanhXe1,1,3,3);
-		//Ve banh xe thu 2
-		circleBresenham(mt52[0][0],mt52[0][1],20,0);
-		setfillstyle(1,0);
-		floodfill(mt52[0][0],mt52[0][1],0);
-		circleBresenham(mt52[0][0],mt52[0][1],12,15);
-		nhan2MaTran(maTranBanhXe2,maTranTinhTien,mt52,1,3,3);
-		nhan2MaTran(mt52,maTranDonVi,maTranBanhXe2,1,3,3);
-		//Ve banh xe thu 3
-		circleBresenham(mt53[0][0],mt53[0][1],20,0);
-		setfillstyle(1,0);
-		floodfill(mt53[0][0],mt53[0][1],0);
-		circleBresenham(mt53[0][0],mt53[0][1],12,15);
-		nhan2MaTran(maTranBanhXe3,maTranTinhTien,mt53,1,3,3);
-		nhan2MaTran(mt53,maTranDonVi,maTranBanhXe3,1,3,3);
 		
 		
 		if(ismouseclick(WM_LBUTTONUP))

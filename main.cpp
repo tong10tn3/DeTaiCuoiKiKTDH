@@ -15,8 +15,14 @@ int main()//int argc, char *argv[]
 {
 	initwindow(1280+8,720+12);
 	setGiaoDien();
-	//xuLi();
+	///xuLi();
 	tinhTien();
+//	int x=490;
+//	int y=490;
+//	int x2=490;
+//	int y2=530;
+//	
+
 	//outtextxy(15,500,"VAT");
 //	putpixel5DV(500,200,12);
 	//lineDDA(500,200,700,300,12);
