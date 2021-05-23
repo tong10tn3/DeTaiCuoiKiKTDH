@@ -27,9 +27,15 @@ CursorRow=15
 TopLine=1
 LeftChar=1
 [Editor_5]
+<<<<<<< HEAD
 CursorCol=23
 CursorRow=12
 TopLine=4
+=======
+CursorCol=2
+CursorRow=194
+TopLine=174
+>>>>>>> f482f4445be49d2426558898c9f7de3d555e1842
 LeftChar=1
 [Editor_6]
 CursorCol=22

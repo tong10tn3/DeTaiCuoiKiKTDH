@@ -186,11 +186,12 @@ void setGiaoDienHoatDong(int i)
 	int xdau=305;	int xcuoi=1275;
 	int ydau=5;		int ycuoi=715;
 	
-	setfillstyle(SOLID_FILL,15);
-	
-	if(i!=1)
+	setfillstyle(SOLID_FILL,0);
+
+	if(i != 1)
 	{
 		bar(xdau,ydau,xcuoi,ycuoi);
+	
 	}
 	setcolor(0);
 	rectangle(xdau,ydau,xcuoi,ycuoi);
