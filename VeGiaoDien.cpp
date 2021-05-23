@@ -334,6 +334,49 @@ void xuLiChuot(button a[])
 		
 	}
 }
+int nhapDuLieu(string text, int sl, int hang)
+{
+	int x=15;
+	int y=280;
+	setbkcolor(mauxanhgiongaokhoaccrush);
+	char* thongDiep=new char[text.length()+1]; 
+ 	strcpy(thongDiep,text.c_str());
+	outtextxy(x,y +30*hang ,thongDiep); 
+	char c[sl];
+	int i=0;
+	do
+	{
+		while(!kbhit());
+		char s=getch();
+		fflush(stdin);
+		if(s!=13&&s!=8&&s-48>=0&&s-48<=9&&i<=sl-1)
+		{
+			c[i]=s;
+			char tam[2];
+			tam[0]=s;
+			tam[1]='\0';
+			outtextxy(x+text.length()*8+i*8,y+30*hang,tam);
+			i++;
+		}
+		else if(s==8&&i>0)
+		{
+			i--;
+			outtextxy(x+text.length()*8+i*8,y+30*hang," ");
+		}
+		else if(s==13&&c[0]!='0'&&i>0)
+		{
+			break;
+		}
+		fflush(stdin);
+	}
+	while(true);
+	int trongso=0;
+	for(int j=0;j<i;j++)
+	{
+		trongso=trongso*10+(c[j]-48);
+	}
+	return trongso;
+}
 
 void xuLi()
 {
