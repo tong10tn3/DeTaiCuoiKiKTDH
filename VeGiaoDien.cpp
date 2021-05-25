@@ -259,6 +259,7 @@ void batDkClickChuot(button &a,int x,int y,button b[])
 		else if(xtam>=200&&xtam<=280&&ytam>=119&&ytam<=189)
 		{
 			cout<<"Tong 3D 3"<<endl;
+			hamVeHinhHopChuNhat();
 		
 			
 		}
