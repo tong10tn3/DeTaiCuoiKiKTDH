@@ -1,4 +1,5 @@
 void lineDDA(int x1,int y1, int x2,int y2, int c);
+void lineDDA1DV(int x1,int y1, int x2,int y2,int c);
 void ve8diem(int x0,int y0,int x, int y, int color);
 void circleBresenham(int x0,int y0,int r, int color);
 void Ve_HCN(int x1, int y1, int x2, int y2, int color);

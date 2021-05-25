@@ -268,7 +268,7 @@ void ghiToaDo( int x, int y, int i)
 	toaDoXChar[toaDoXString.size()] = '\0';
 	
 	settextstyle(DEFAULT_FONT,0, 1);
-	outtextxy(150,gocTen+30*i,toaDoXChar);
+	outtextxy(150,gocTen+15*i,toaDoXChar);
 	settextstyle(DEFAULT_FONT,0,1);
 		
 		
@@ -281,7 +281,7 @@ void ghiToaDo( int x, int y, int i)
 	copy(toaDoYString.begin(), toaDoYString.end(), toaDoYChar);
 	toaDoYChar[toaDoYString.size()] = '\0';
 	settextstyle(DEFAULT_FONT,0, 1);
-	outtextxy(233,gocTen+30*i,toaDoYChar);
+	outtextxy(233,gocTen+15*i,toaDoYChar);
 	settextstyle(DEFAULT_FONT,0,1);
 }
 

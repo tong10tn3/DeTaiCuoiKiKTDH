@@ -49,6 +49,23 @@ void lineDDA(int x1,int y1, int x2,int y2,int c){
 		}
 	}
 }
+void lineDDA1DV(int x1,int y1, int x2,int y2,int c){
+	int i,j,step;
+	int dx=x2-x1;
+	int dy=y2-y1;
+	abs(dx)>=abs(dy) ? step=abs(dx) : step=abs(dy);
+	float inc_x = (float) dx/step;
+	float inc_y = (float) dy/step;
+	if(abs(dx)>=abs(dy) || abs(dx)<=abs(dy)){
+		float x=x1;
+		float y=y1;
+		for(i=0;i<=abs(step);i+=1){
+			putpixel(round(x),round(y),c);
+			x+=inc_x;
+			y+=inc_y;
+		}
+	}
+}
 
 void ve8diem(int x0,int y0,int x, int y, int color)
 {
@@ -188,7 +205,7 @@ void hienThiToaDo(double x, double y, int i)
 	double xO=790;
 	double yO=360;
 	
-	double gocTen=260;
+	double gocTen=290;
 	double toaDoX= roundf(((x-xO)/5.0) * 100) / 100;
 	double toaDoY= roundf(((y-yO)/5.0)* 100) / -100;
 
@@ -200,7 +217,7 @@ void hienThiToaDo(double x, double y, int i)
 	toaDoXChar[toaDoXString.size()] = '\0';
 	
 	settextstyle(DEFAULT_FONT,0, 1);
-	outtextxy(150,gocTen+30*i,toaDoXChar);
+	outtextxy(150,gocTen+15*i,toaDoXChar);
 	settextstyle(DEFAULT_FONT,0,1);
 		
 		
@@ -213,7 +230,7 @@ void hienThiToaDo(double x, double y, int i)
 	copy(toaDoYString.begin(), toaDoYString.end(), toaDoYChar);
 	toaDoYChar[toaDoYString.size()] = '\0';
 	settextstyle(DEFAULT_FONT,0, 1);
-	outtextxy(233,gocTen+30*i,toaDoYChar);
+	outtextxy(233,gocTen+15*i,toaDoYChar);
 	settextstyle(DEFAULT_FONT,0,1);
 }
 

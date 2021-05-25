@@ -77,6 +77,32 @@ void veTenLua(int x, int y, int a, int b)
 	setfillstyle(SOLID_FILL,14);
 	floodfill((x4+x7)/2,(y4+y7)/2,0);
 	
+	// Toa Do ten lua
+		setbkcolor(mauxanhgiongaokhoaccrush);
+		settextstyle(DEFAULT_FONT,0, 1);
+		setcolor(15);
+		outtextxy(15,290+15*14,"Toa do cac diem cua TEN LUA");
+		outtextxy(15,290+15*15,"1.Mui Ten lua:");
+		hienThiToaDo(x1,y1,15);//ten lua x1
+		
+		outtextxy(15,290+15*16,"2.Than Ten Lua 1:");
+		hienThiToaDo(x2,y2,16);//ten lua x1
+		
+		outtextxy(15,290+15*17,"3.Than Ten Lua 2:");
+		hienThiToaDo(x3,y3,17);//ten lua x1
+		
+		outtextxy(15,290+15*18,"4.Than Ten Lua 3:");
+		hienThiToaDo(x4,y4,18);//ten lua x1
+		
+		outtextxy(15,290+15*19,"5.Than Ten Lua 4:");
+		hienThiToaDo(x5,y5,19);//ten lua x1
+		
+		outtextxy(15,290+15*20,"6.Duoi Ten Lua 1:");
+		hienThiToaDo(x6,y6,20);//ten lua x1
+		
+		outtextxy(15,290+15*21,"7.Duoi Ten Lua 2:");
+		hienThiToaDo(x7,y7,21);//ten lua x1
+	
 	
 }
 void tinhTienTenLua(int i)
@@ -292,41 +318,45 @@ void tinhTien(){
 		setcolor(15);
 		settextstyle(DEFAULT_FONT,0, 1);	
 		setbkcolor(mauxanhgiongaokhoaccrush);
-		outtextxy(15,280,"VAT");
-		outtextxy(150,280,"X");
-		outtextxy(233,280,"Y");
+		outtextxy(15,275,"VAT");
+		outtextxy(150,275,"X");
+		outtextxy(233,275,"Y");
 		//toa do banh xe truoc
-		outtextxy(15,260+30*1,"Banh xe truoc");
-		hienThiToaDo(mt51[0][0]+5,mt51[0][1],1);
+		outtextxy(15,290+15*0,"Banh xe truoc");
+		hienThiToaDo(mt51[0][0]+5,mt51[0][1],2);
 		//toa do banh xe giua
-		outtextxy(15,260+30*2,"Banh xe giua");
-		hienThiToaDo(mt52[0][0]+5,mt52[0][1],2);
+		outtextxy(15,290+15*1,"Banh xe giua");
+		hienThiToaDo(mt52[0][0]+5,mt52[0][1],1);
 		//toa do banh xe sau
-		outtextxy(15,260+30*3,"Banh xe sau");
-		hienThiToaDo(mt53[0][0]+5,mt53[0][1],3);
+		outtextxy(15,290+15*2,"Banh xe sau");
+		hienThiToaDo(mt53[0][0]+5,mt53[0][1],2);
 		//toa do cac diem dau xe
-		outtextxy(15,260+30*4,"Toa do cac diem dau xe");
-		outtextxy(15,260+30*5,"dau xe 1");
-		hienThiToaDo(mt31[0][0]+5,mt31[0][1],5);
-		outtextxy(15,260+30*6,"dau xe 2");
-		hienThiToaDo(mt31[0][0]+5,mt32[0][1],6);
-		outtextxy(15,260+30*7,"dau xe 3");
-		hienThiToaDo(mt21[0][0]+5,mt21[0][1],7);
-		outtextxy(15,260+30*8,"dau xe 4");
-		hienThiToaDo(mt22[0][0]+5,mt21[0][1],8);
-		outtextxy(15,260+30*9,"dau xe 5");
-		hienThiToaDo(mt22[0][0]+5,mt22[0][1],9);
+		outtextxy(15,290+15*3,"Toa do cac diem dau xe");
+		outtextxy(15,290+15*4,"dau xe 1");
+		hienThiToaDo(mt31[0][0]+5,mt31[0][1],4);
+		outtextxy(15,290+15*5,"dau xe 2");
+		hienThiToaDo(mt31[0][0]+5,mt32[0][1],5);
+		outtextxy(15,290+15*6,"dau xe 3");
+		hienThiToaDo(mt21[0][0]+5,mt21[0][1],6);
+		outtextxy(15,290+15*7,"dau xe 4");
+		hienThiToaDo(mt22[0][0]+5,mt21[0][1],7);
+		outtextxy(15,290+15*8,"dau xe 5");
+		hienThiToaDo(mt22[0][0]+5,mt22[0][1],8);
 		//toa do cac diem thung xe
-		outtextxy(15,260+30*10,"Toa do cac diem thung xe");
-		outtextxy(15,260+30*11,"thung xe 1");
-		hienThiToaDo(mt11[0][0]+5,mt11[0][1],11);
-		outtextxy(15,260+30*12,"thung xe 2");
-		hienThiToaDo(mt11[0][0]+5,mt12[0][1],12);
-		outtextxy(15,260+30*13,"thung xe 3");
-		hienThiToaDo(mt12[0][0]+5,mt11[0][1],13);
-		outtextxy(15,260+30*14,"thung xe 4");
-		hienThiToaDo(mt12[0][0]+5,mt12[0][1],14);
+		outtextxy(15,290+15*9,"Toa do cac diem thung xe");
+		outtextxy(15,290+15*10,"thung xe 1");
+		hienThiToaDo(mt11[0][0]+5,mt11[0][1],10);
+		outtextxy(15,290+15*11,"thung xe 2");
+		hienThiToaDo(mt11[0][0]+5,mt12[0][1],11);
+		outtextxy(15,290+15*12,"thung xe 3");
+		hienThiToaDo(mt12[0][0]+5,mt11[0][1],12);
+		outtextxy(15,290+15*13,"thung xe 4");
+		hienThiToaDo(mt12[0][0]+5,mt12[0][1],13);
 		
+		int banKinhin= 15;
+		int banKinhout=20;
+		outtextxy(15,290+15*22,doiSangChar("Ban Kinh Trong Banh Xe: "+doiBanKinh(banKinhin)));
+		outtextxy(15,290+15*23,doiSangChar("Ban Kinh Ngoai Banh Xe: "+doiBanKinh(banKinhout)));
 		
 		
 		

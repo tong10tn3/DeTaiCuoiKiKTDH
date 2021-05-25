@@ -68,6 +68,8 @@ void veNetDut(int x1, int y1, int x2, int y2)
 }
 void veHinhNon(int x,int y,int z,int R,int h)
 {
+	R=R*5;
+	h=h*5;
 	int X,Y,Xdoi,Ydoi;
 	doisang2D(x,y,z,X,Y);
 	doiNguoiDungsangMayTinh(X,Y,xO,yO,Xdoi,Ydoi);
@@ -89,6 +91,7 @@ void veHinhNon(int x,int y,int z,int R,int h)
 }
 void veHinhCau(int x,int y,int z,int R)
 {
+	R=R*5;
 	int X,Y,Xdoi,Ydoi;
 	doisang2D(x,y,z,X,Y);
 	doiNguoiDungsangMayTinh(X,Y,xO,yO,Xdoi,Ydoi);	
@@ -105,6 +108,9 @@ void veHinhCau(int x,int y,int z,int R)
 	circleBresenham(Xdoi,Ydoi,R,0);
 	elipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,0);	
 }
+
+
+
 void hamVeHinhNon()
 {
 	clearmouseclick(WM_LBUTTONUP);
@@ -112,15 +118,16 @@ void hamVeHinhNon()
 	setbkcolor(mauxanhgiongaokhoaccrush);
 	settextstyle(DEFAULT_FONT,0, 1);
 	outtextxy(70,280,"HINH NON ");
-	int x=	nhapDuLieu("Nhap Toa Do X Day: ",3,1);
+	int x=	nhapDuLieu("NhAP TOA DO X DAY: ",3,1);
 
-	int y=	nhapDuLieu("Nhap Toa Do Y Day: ",3,2);
+	int y=	nhapDuLieu("NHAP TOA DO Y DAY: ",3,2);
 
-	int z=	nhapDuLieu("Nhap Toa Do Z Day: ",3,3);
+	int z=	nhapDuLieu("NHAP TOA DO Z DAY: ",3,3);
 	
-	int R=	nhapDuLieu("Nhap Ban Kinh Day : ",3,4);
+	int R=	nhapDuLieu("NHAP BAN KINH DAY: ",3,4);
 	
-	int h=	nhapDuLieu("Nhap Chieu Cao: ",3,5);
+	int h=	nhapDuLieu("NHAP CHIEU CAO: ",3,5);
+
 	veHinhNon(x,y,z,R,h);
 	setcolor(15);
 	
@@ -142,10 +149,11 @@ void hamVeHinhNon()
 	string HString= convertH.str();
 	
 	setThongTin();
+	
 	outtextxy(70,280,"HINH NON ");
-	string text= "Tam Day 0 ("+toaDoXString+","+toaDoYString+","+toaDoZString+")";
-	string text2= "Ban Kinh Day: "+RString;
-	string text3="Chieu Cao: "+HString;
+	string text= "TAM DAY O ("+toaDoXString+","+toaDoYString+","+toaDoZString+")";
+	string text2= "BAN KINH DAY : "+RString;
+	string text3="CHIEU CAO : "+HString;
 	
 	char *textC = new char[text.length()+1];
 	strcpy(textC,text.c_str());
@@ -184,13 +192,13 @@ void hamVeHinhCau()
 	setcolor(15);
 	setbkcolor(mauxanhgiongaokhoaccrush);
 	outtextxy(70,280,"HINH CAU ");
-	int x=	nhapDuLieu("Nhap Toa Do X Day: ",3,1);
+	int x=	nhapDuLieu("NHAP TOA DO X TAM 0: ",3,1);
 
-	int y=	nhapDuLieu("Nhap Toa Do Y Day: ",3,2);
+	int y=	nhapDuLieu("NHAP TOA DO Y TAM 0: ",3,2);
 
-	int z=	nhapDuLieu("Nhap Toa Do Z Day: ",3,3);
+	int z=	nhapDuLieu("NHAP TOA DO Z TAM 0: ",3,3);
 	
-	int R=	nhapDuLieu("Nhap Ban Kinh Day : ",3,4);
+	int R=	nhapDuLieu("NHAP BAN KINH : ",3,4);
 	
 	
 	veHinhCau(x,y,z,R);
@@ -216,9 +224,9 @@ void hamVeHinhCau()
 	string RsString= convertRs.str();
 	setThongTin();
 	outtextxy(70,280,"HINH CAU ");
-	string text= "Tam 0 ("+toaDoXString+","+toaDoYString+","+toaDoZString+")";
-	string text2= "Ban Kinh : "+RString;
-	string text3="R sau khi bien doi:  "+RsString;
+	string text= "TAM O ("+toaDoXString+","+toaDoYString+","+toaDoZString+")";
+	string text2= "AN KINH : "+RString;
+	//string text3="R sau khi bien doi:  "+RsString;
 	
 	char *textC = new char[text.length()+1];
 	strcpy(textC,text.c_str());
@@ -228,9 +236,9 @@ void hamVeHinhCau()
 	strcpy(textC2,text2.c_str());
 	outtextxy(15,280+60,textC2);
 	
-	char *textC3= new char[text3.length()+1];
-	strcpy(textC3,text3.c_str());
-	outtextxy(15,280+90,textC3);
+//	char *textC3= new char[text3.length()+1];
+//	strcpy(textC3,text3.c_str());
+//	outtextxy(15,280+90,textC3);
 	
 	while(true){
 		delay(1);

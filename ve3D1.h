@@ -5,4 +5,5 @@ void veHinhNon(int x,int y,int z,int R,int h);
 void veHinhCau(int x,int y,int z,int R);
 void hamVeHinhNon();
 void hamVeHinhCau();
+void runHinhCau();
 
