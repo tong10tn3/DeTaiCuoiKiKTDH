@@ -103,7 +103,7 @@ void veKhoiCau(int x, int y, int z, int r) {
 	float xf, yf, zf;
 	xf= x;
 	yf= y;
-	zf= 2*z/3;
+	zf= z/2;
 	
 	xf-=zf*cos30;
 	yf-=zf*sin30;
@@ -112,8 +112,8 @@ void veKhoiCau(int x, int y, int z, int r) {
 	circleBresenham(xo+xf,yo-yf,r,12);
 	
 	//elipse(xo+xf,yo-yf,r,r/4,12);
-	brokenElipse(xo+xf,yo-yf,r,r/4,12);
-	lineDDA1DV(xo,yo,xo+xf,yo-yf,0); //line from origin to orb's center
+	brokenElipse(xo+xf,yo-yf,r,cos30*r/2,12);
+	lineDDA1DV(xo,yo,xo+xf,yo-yf,12); //line from origin to orb's center
 	
 }
 

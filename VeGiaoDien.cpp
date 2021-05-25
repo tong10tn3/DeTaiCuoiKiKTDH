@@ -378,14 +378,21 @@ int nhapDuLieu(string text, int sl, int hang)
 		while(!kbhit());
 		char s=getch();
 		fflush(stdin);
-		if(s!=13&&s!=8&&s-48>=0&&s-48<=9&&i<=sl-1)
+		if(s!=13&&s!=8&&((s-48>=0&&s-48<=9)||s==45)&&i<=sl-1)
 		{
-			c[i]=s;
-			char tam[2];
-			tam[0]=s;
-			tam[1]='\0';
-			outtextxy(x+text.length()*8+i*8,y+30*hang,tam);
-			i++;
+			if(i!=0&&s==45)
+			{
+				
+			}
+			else
+			{
+				c[i]=s;
+				char tam[2];
+				tam[0]=s;
+				tam[1]='\0';
+				outtextxy(x+text.length()*8+i*8,y+30*hang,tam);
+				i++;
+			}
 		}
 		else if(s==8&&i>0)
 		{
@@ -400,10 +407,21 @@ int nhapDuLieu(string text, int sl, int hang)
 	}
 	while(true);
 	int trongso=0;
-	for(int j=0;j<i;j++)
+	if(c[0]==45)
 	{
-		trongso=trongso*10+(c[j]-48);
+		for(int j=1;j<i;j++)
+		{
+			trongso=trongso*10+(c[j]-48);
+		}
+		trongso*=-1;
 	}
+	else {
+		for(int j=0;j<i;j++)
+		{
+			trongso=trongso*10+(c[j]-48);
+		}
+	}
+	
 	return trongso;
 }
 
