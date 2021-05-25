@@ -21,7 +21,8 @@ using namespace std;
 #include "VeGiaoDien.h"
 #include "ve2D1.h"
 #include "ve2D2.h"
-#include "ve3D.h"
+#include "ve3D1_2.h"
+#include "ve3D3.h"
 using namespace std;
 
 // =============== THIET LAP GIAO DIEN ================
@@ -256,6 +257,7 @@ void batDkClickChuot(button &a,int x,int y,button b[])
 		else if(xtam>=200&&xtam<=280&&ytam>=119&&ytam<=189)
 		{
 			cout<<"Tong 3D 3"<<endl;
+			xuLi3D1();
 			
 		}
 		

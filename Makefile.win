@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o hamCoSo.o ve2D1.o VeGiaoDien.o Ve2D2.o ve3D.o
-LINKOBJ  = main.o hamCoSo.o ve2D1.o VeGiaoDien.o Ve2D2.o ve3D.o
+OBJ      = main.o hamCoSo.o ve2D1.o VeGiaoDien.o Ve2D2.o ve3D1_2.o ve3D3.o
+LINKOBJ  = main.o hamCoSo.o ve2D1.o VeGiaoDien.o Ve2D2.o ve3D1_2.o ve3D3.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -luser32 -m32
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -39,5 +39,8 @@ VeGiaoDien.o: VeGiaoDien.cpp
 Ve2D2.o: Ve2D2.cpp
 	$(CPP) -c Ve2D2.cpp -o Ve2D2.o $(CXXFLAGS)
 
-ve3D.o: ve3D.cpp
-	$(CPP) -c ve3D.cpp -o ve3D.o $(CXXFLAGS)
+ve3D1_2.o: ve3D1_2.cpp
+	$(CPP) -c ve3D1_2.cpp -o ve3D1_2.o $(CXXFLAGS)
+
+ve3D3.o: ve3D3.cpp
+	$(CPP) -c ve3D3.cpp -o ve3D3.o $(CXXFLAGS)

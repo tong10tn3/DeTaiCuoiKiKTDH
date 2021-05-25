@@ -8,15 +8,18 @@
 #include<conio.h>
 #include "VeGiaoDien.h"
 #include<iostream>
-#include "ve3d.h"
+#include "ve3D1_2.h"
+#include "ve3D3.h"
 using namespace std;
 #define PI 3.14159265359
 
 int main()//int argc, char *argv[]
 {
 	initwindow(1280+8,720+12);
-	setGiaoDien();  
+	setGiaoDien();
+	
 	xuLi();
+	//xuLi3D1();
 
 	
 	getch();
