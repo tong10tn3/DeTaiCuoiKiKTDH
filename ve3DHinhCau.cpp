@@ -112,7 +112,7 @@ void veKhoiCau(int x, int y, int z, int r) {
 	circleBresenham(xo+xf,yo-yf,r,12);
 	
 	//elipse(xo+xf,yo-yf,r,r/4,12);
-	brokenElipse(xo+xf,yo-yf,r,cos30*r/2,12);
+	brokenElipse(xo+xf,yo-yf,r,sin30*r/2,12);
 	lineDDA1DV(xo,yo,xo+xf,yo-yf,12); //line from origin to orb's center
 	
 }
@@ -120,7 +120,10 @@ void veKhoiCau(int x, int y, int z, int r) {
 void runHinhCau()
 {
 	clearmouseclick(WM_LBUTTONUP);
+	
 	setGiaoDienHoatDong(3);
+	veHeToaDo3D();
+	
 	settextstyle(DEFAULT_FONT,0, 1);
 	setcolor(15);
 	setbkcolor(mauxanhgiongaokhoaccrush);
@@ -173,10 +176,10 @@ void runHinhCau()
 //	char *textC3= new char[text3.length()+1];
 //	strcpy(textC3,text3.c_str());
 //	outtextxy(15,280+90,textC3);
-	
+	clearmouseclick(WM_LBUTTONUP);
 	while(true){
 		delay(1);
-
+	
 	if(ismouseclick(WM_LBUTTONUP))
 			{
 				int xtam; int ytam;

@@ -45,22 +45,33 @@ void veHinhHopChuNhat(int x,int y,int z,int d,int r,int c){
 	veNetDut(Xdoi - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi, Ydoi);//DH
 }
 void hamVeHinhHopChuNhat(){
+	
 	clearmouseclick(WM_LBUTTONUP);
 	setGiaoDienHoatDong(4);
+	setcolor(0);
+	lineDDA(700,5,700,320,0);
+	lineDDA(700,320,305,715,0);
+	lineDDA(700,320,1275,320,0);
+	setbkcolor(15);
+	settextstyle(DEFAULT_FONT,0, 1);
+	outtextxy(680,20,"Y");
+	outtextxy(1250,300,"X");
+	outtextxy(320,665,"Z");
+	setcolor(15);
 	setbkcolor(mauxanhgiongaokhoaccrush);
 	settextstyle(DEFAULT_FONT,0, 1);
-	outtextxy(70,280,"HINH HCN ");
-	float x=	nhapDuLieu("Nhap Toa Do X Day: ",3,1);
+	outtextxy(70,280,"HINH HCN "); 
+	float x=	nhapDuLieu("NHAP TOA DO X TAM : ",3,1);
 
-	float y=	nhapDuLieu("Nhap Toa Do Y Day: ",3,2);
+	float y=	nhapDuLieu("NHAP TOA DO Y TAM: ",3,2);
 
-	float z=	nhapDuLieu("Nhap Toa Do Z Day: ",3,3);
+	float z=	nhapDuLieu("NHAP TOA DO Z TAM: ",3,3);
 	
-	float d=	nhapDuLieu("Nhap Chieu Dai : ",3,4);
+	float d=	nhapDuLieu("NHAP CHIEU DAI: ",3,4);
 	
-	float r=	nhapDuLieu("Nhap Chieu Rong: ",3,5);
+	float r=	nhapDuLieu("NHAP CHIEU RONG: ",3,5);
 	
-	float c = nhapDuLieu("Nhap Chieu Cao: ",3,6);
+	float c = nhapDuLieu("NHAP CHIEU CAO: ",3,6);
 	veHinhHopChuNhat(x,y,z,d,r,c);
 	setcolor(15);
 	
@@ -177,9 +188,9 @@ void hamVeHinhHopChuNhat(){
 	
 	setThongTin();
 	outtextxy(70,280,"HINH HCN ");
-	string text= "Chieu Dai: "+DaiString;
-	string text2="Chieu Rong: "+RongString;
-	string text3="Chieu Cao: "+CaoString;
+	string text= "CHIEU DAI: "+DaiString;
+	string text2="CHIEU RONG: "+RongString;
+	string text3="CHIEU CAO: "+CaoString;
 	string textO="O ("+toaDoOxString+","+toaDoOyString+","+toaDoOzString+")";
 	string textA="A ("+toaDoAxString+","+toaDoAyString+","+toaDoAzString+")";
 	string textB="B ("+toaDoBxString+","+toaDoByString+","+toaDoBzString+")";

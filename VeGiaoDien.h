@@ -40,6 +40,7 @@ struct button
 // ====================================================
 
 // =============== THIET LAP GIAO DIEN ================
+		void ghiDSTV();
 		int nhapDuLieu(string text, int sl, int hang);
 		void setGiaoDien();
 		void setGiaoDienHoatDong(int i);

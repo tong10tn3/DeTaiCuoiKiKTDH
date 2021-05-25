@@ -8,6 +8,7 @@
 #include "VeGiaoDien.h"
 #define ROUND(a) (int)(a+0.5)
 #include <sstream>
+#include "ve3DHinhCau.h"
 using namespace std;
 #define PI 3.14159265359
 int xO=700;
@@ -70,6 +71,7 @@ void veHinhNon(int x,int y,int z,int R,int h)
 {
 	R=R*5;
 	h=h*5;
+
 	int X,Y,Xdoi,Ydoi;
 	doisang2D(x,y,z,X,Y);
 	doiNguoiDungsangMayTinh(X,Y,xO,yO,Xdoi,Ydoi);
@@ -81,7 +83,8 @@ void veHinhNon(int x,int y,int z,int R,int h)
 	outtextxy(680,20,"Y");
 	outtextxy(1250,300,"X");
 	outtextxy(320,665,"Z");
-	elipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,0);
+	
+	brokenElipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,0);
 	lineDDA(Xdoi,Ydoi-h,Xdoi-R,Ydoi,0);
 	lineDDA(Xdoi,Ydoi-h,Xdoi+R,Ydoi,0);
 	veNetDut(Xdoi,Ydoi-h,Xdoi,Ydoi);
@@ -113,8 +116,21 @@ void veHinhCau(int x,int y,int z,int R)
 
 void hamVeHinhNon()
 {
+	
 	clearmouseclick(WM_LBUTTONUP);
 	setGiaoDienHoatDong(2);
+	setcolor(0);
+	lineDDA(700,5,700,320,0);
+	lineDDA(700,320,305,715,0);
+	lineDDA(700,320,1275,320,0);
+	setbkcolor(15);
+	settextstyle(DEFAULT_FONT,0, 1);
+	outtextxy(680,20,"Y");
+	outtextxy(1250,300,"X");
+	outtextxy(320,665,"Z");
+	setcolor(15);
+	
+	
 	setbkcolor(mauxanhgiongaokhoaccrush);
 	settextstyle(DEFAULT_FONT,0, 1);
 	outtextxy(70,280,"HINH NON ");
@@ -186,6 +202,7 @@ void hamVeHinhNon()
 }
 void hamVeHinhCau()
 {
+	
 	clearmouseclick(WM_LBUTTONUP);
 	setGiaoDienHoatDong(3);
 	settextstyle(DEFAULT_FONT,0, 1);

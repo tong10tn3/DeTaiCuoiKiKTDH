@@ -7,8 +7,8 @@ int main()//int argc, char *argv[]
 {
 	initwindow(1280+8,720+12);
 	setGiaoDien();
+	ghiDSTV();
 	xuLi();
-	//hamVeHinhHopChuNhat();
 	getch();
 	return 0;
 	

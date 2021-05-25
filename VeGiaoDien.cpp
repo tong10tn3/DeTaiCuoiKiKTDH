@@ -425,7 +425,23 @@ int nhapDuLieu(string text, int sl, int hang)
 	
 	return trongso;
 }
-
+void ghiDSTV()
+{
+	settextstyle(DEFAULT_FONT,0, 2);
+	setbkcolor(15);
+	setcolor(0);
+	outtextxy(600,50,"DANH SACH THANH VIEN");
+	outtextxy(500,50+50,"1.DUONG PHAM THANH TONG - N18DCCN189");
+	outtextxy(500,50+100,"2.NGUYEN LONG NHAT - N18DCCN141");
+	outtextxy(500,50+150,"3.NGUYEN VAN DUC - N18DCCN045");
+	outtextxy(500,50+200,"4.VU NGOC LINH - N18DCCN105");
+	outtextxy(500,50+250,"5.NGUYEN HOANG LONG - N18DCCN108");
+	
+	
+	
+	
+	setcolor(15);
+}
 void xuLi()
 {
 	button a[11];
