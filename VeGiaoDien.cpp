@@ -204,6 +204,8 @@ void setGiaoDienHoatDong(int i)
 	setcolor(0);
 	rectangle(xdau,ydau,xcuoi,ycuoi);
 	setcolor(15);
+//	if(i!=1)
+//	{
 //	for(int i=305;i<=1275;i+=5)
 //	{
 //		line(i,5,i,715);
@@ -211,6 +213,7 @@ void setGiaoDienHoatDong(int i)
 //	for(int j=5;j<=715;j+=5)
 //	{
 //		line(305,j,1275,j);
+//	}
 //	}
 
 	button a[11];

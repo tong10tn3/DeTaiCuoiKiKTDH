@@ -42,7 +42,7 @@ void veNetDut(int x1, int y1, int x2, int y2)
 		for(i=0;i<=abs(step);i++){
 			if(soNetPutPixel<soNetVe&&soNetKhongPutPixel==0)
         {
-        	putpixel5DV(ROUND(x),ROUND(y),0);
+        	putpixel5DV(ROUND(x),ROUND(y),12);
         	soNetPutPixel++;
 		}
 		else if(soNetPutPixel==soNetVe&&soNetKhongPutPixel<soNetAn)
@@ -58,7 +58,7 @@ void veNetDut(int x1, int y1, int x2, int y2)
 		{
 			soNetPutPixel++;
 			soNetKhongPutPixel=0;
-			putpixel5DV(ROUND(x),ROUND(y),0);
+			putpixel5DV(ROUND(x),ROUND(y),12);
 		}
 			x+=inc_x;
 			y+=inc_y;
@@ -84,9 +84,9 @@ void veHinhNon(int x,int y,int z,int R,int h)
 	outtextxy(1250,300,"X");
 	outtextxy(320,665,"Z");
 	
-	brokenElipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,0);
-	lineDDA(Xdoi,Ydoi-h,Xdoi-R,Ydoi,0);
-	lineDDA(Xdoi,Ydoi-h,Xdoi+R,Ydoi,0);
+	brokenElipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,12);
+	lineDDA(Xdoi,Ydoi-h,Xdoi-R,Ydoi,12);
+	lineDDA(Xdoi,Ydoi-h,Xdoi+R,Ydoi,12);
 	veNetDut(Xdoi,Ydoi-h,Xdoi,Ydoi);
 	veNetDut(Xdoi,Ydoi,Xdoi-R,Ydoi);
 	veNetDut(Xdoi,Ydoi,Xdoi+R,Ydoi);
@@ -108,8 +108,8 @@ void veHinhCau(int x,int y,int z,int R)
 	outtextxy(320,665,"Z");
 	
 	
-	circleBresenham(Xdoi,Ydoi,R,0);
-	elipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,0);	
+	circleBresenham(Xdoi,Ydoi,R,12);
+	elipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,12);	
 }
 
 

@@ -19,7 +19,7 @@ void veHinhHopChuNhat(int x,int y,int z,int d,int r,int c){
 	int xO=700;
 	int yO=320;	
 	int X,Y,Xdoi,Ydoi;
-	float sqrt2per2 = sqrt(2) / 2;
+	float sqrt2per2 = sqrt(2) / 4;
 	doisang2D(x,y,z,X,Y);
 	doiNguoiDungsangMayTinh(X,Y,xO,yO,Xdoi,Ydoi);
 	setcolor(0);
@@ -30,18 +30,18 @@ void veHinhHopChuNhat(int x,int y,int z,int d,int r,int c){
 	outtextxy(680,20,"Y");
 	outtextxy(1250,300,"X");
 	outtextxy(320,665,"Z");
-	lineDDA(Xdoi, Ydoi - c, Xdoi + d, Ydoi - c,0);
-	lineDDA(Xdoi + d, Ydoi - c, Xdoi + d, Ydoi,0);
+	lineDDA(Xdoi, Ydoi - c, Xdoi + d, Ydoi - c,12);
+	lineDDA(Xdoi + d, Ydoi - c, Xdoi + d, Ydoi,12);
 	veNetDut(Xdoi + d, Ydoi, Xdoi, Ydoi);
 	veNetDut(Xdoi, Ydoi, Xdoi, Ydoi-c);
-	lineDDA(Xdoi - sqrt2per2*r, Ydoi - (c - sqrt2per2*r), Xdoi + d - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r),0);//EF
-	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r), Xdoi + d - sqrt2per2 * r, Ydoi + sqrt2per2 * r,0);//FG
-	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi - sqrt2per2 * r, Ydoi + sqrt2per2 * r,0);//HG
-	lineDDA(Xdoi - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r),0);//EH
+	lineDDA(Xdoi - sqrt2per2*r, Ydoi - (c - sqrt2per2*r), Xdoi + d - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r),12);//EF
+	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r), Xdoi + d - sqrt2per2 * r, Ydoi + sqrt2per2 * r,12);//FG
+	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi - sqrt2per2 * r, Ydoi + sqrt2per2 * r,12);//HG
+	lineDDA(Xdoi - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r),12);//EH
 	
-	lineDDA(Xdoi - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r), Xdoi, Ydoi - c,0);//BF
-	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r), Xdoi + d, Ydoi - c,0);//BB'
-	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi + d, Ydoi,0);//CG
+	lineDDA(Xdoi - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r), Xdoi, Ydoi - c,12);//BF
+	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi - (c - sqrt2per2 * r), Xdoi + d, Ydoi - c,12);//BB'
+	lineDDA(Xdoi + d - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi + d, Ydoi,12);//CG
 	veNetDut(Xdoi - sqrt2per2 * r, Ydoi + sqrt2per2 * r, Xdoi, Ydoi);//DH
 }
 void hamVeHinhHopChuNhat(){
