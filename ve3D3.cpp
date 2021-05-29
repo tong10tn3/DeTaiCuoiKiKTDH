@@ -61,11 +61,11 @@ void hamVeHinhHopChuNhat(){
 	setbkcolor(mauxanhgiongaokhoaccrush);
 	settextstyle(DEFAULT_FONT,0, 1);
 	outtextxy(70,280,"HINH HCN "); 
-	float x=	nhapDuLieu("NHAP TOA DO X TAM : ",3,1);
+	float x=	nhapDuLieu("NHAP TOA DO X O: ",3,1);
 
-	float y=	nhapDuLieu("NHAP TOA DO Y TAM: ",3,2);
+	float y=	nhapDuLieu("NHAP TOA DO Y O: ",3,2);
 
-	float z=	nhapDuLieu("NHAP TOA DO Z TAM: ",3,3);
+	float z=	nhapDuLieu("NHAP TOA DO Z O: ",3,3);
 	
 	float d=	nhapDuLieu("NHAP CHIEU DAI: ",3,4);
 	

@@ -52,11 +52,11 @@ void brokenElipse(int xcenter,int ycenter,int xradius,int yradius, int color) {
     	if(x%8==0)
 		{
 		
-        putpixel5DV(xcenter+x,ycenter-y,color);
-        putpixel5DV(xcenter-x,ycenter-y,color);
+        	putpixel5DV(xcenter+x,ycenter-y,color);
+        	putpixel5DV(xcenter-x,ycenter-y,color);
     	}
-    	putpixel5DV(xcenter+x,ycenter+y,color);
-        putpixel5DV(xcenter-x,ycenter+y,color);
+    		putpixel5DV(xcenter+x,ycenter+y,color);
+        	putpixel5DV(xcenter-x,ycenter+y,color);
     	
     	if (p<0) p += 2*c*(2*x+3);
         else {

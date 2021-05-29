@@ -35,7 +35,7 @@ void veNetDut(int x1, int y1, int x2, int y2)
     int soNetPutPixel=0;
     int soNetKhongPutPixel=0;
     int soNetVe=10;
-    int soNetAn=5;
+    int soNetAn=10;
 	if(abs(dx)>=abs(dy) || abs(dx)<=abs(dy)){
 		float x=x1;
 		float y=y1;
@@ -45,7 +45,7 @@ void veNetDut(int x1, int y1, int x2, int y2)
         	putpixel5DV(ROUND(x),ROUND(y),12);
         	soNetPutPixel++;
 		}
-		else if(soNetPutPixel==soNetVe&&soNetKhongPutPixel<soNetAn)
+		else if(soNetPutPixel==soNetVe&&soNetKhongPutPixel==0)
 		{
 			soNetKhongPutPixel++;
 			soNetPutPixel=0;
@@ -109,7 +109,8 @@ void veHinhCau(int x,int y,int z,int R)
 	
 	
 	circleBresenham(Xdoi,Ydoi,R,12);
-	elipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,12);	
+	brokenElipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,12);
+		
 }
 
 
@@ -247,7 +248,7 @@ void hamVeHinhCau()
 	setThongTin();
 	outtextxy(70,280,"HINH CAU ");
 	string text= "TAM O ("+toaDoXString+","+toaDoYString+","+toaDoZString+")";
-	string text2= "AN KINH : "+RString;
+	string text2= "BAN KINH : "+RString;
 	//string text3="R sau khi bien doi:  "+RsString;
 	
 	char *textC = new char[text.length()+1];

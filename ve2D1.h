@@ -11,8 +11,8 @@ void maTranQo(double Qo[][3], double gocQuay);
 
 void randomSao(int soLuong, int XSao[], int YSao[]);
 void veBauTroiSao(int soLuong, int XSao[], int YSao[] );
-string doiBanKinh(int x);
-char* doiSangChar(string text);
+//string doiBanKinh(int x);
+//char* doiSangChar(string text);
 void veVeTinh(int x , int y);
 void veThienThach(int x, int y, int gocQuay, int mauDuoi);
 void PhepXoay1Diem(int xDiem,int yDiem,int xGoc,int yGoc, int gocQuay,int &xMoi,int &yMoi);
