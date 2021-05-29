@@ -205,6 +205,11 @@ void hamVeHinhCau()
 	
 	clearmouseclick(WM_LBUTTONUP);
 	setGiaoDienHoatDong(3);
+	setcolor(0);
+	lineDDA(700,5,700,320,0);
+	lineDDA(700,320,305,715,0);
+	lineDDA(700,320,1275,320,0);
+	setbkcolor(15);
 	settextstyle(DEFAULT_FONT,0, 1);
 	setcolor(15);
 	setbkcolor(mauxanhgiongaokhoaccrush);

@@ -323,7 +323,7 @@ void tinhTien(){
 		outtextxy(233,275,"Y");
 		//toa do banh xe truoc
 		outtextxy(15,290+15*0,"Banh xe truoc");
-		hienThiToaDo(mt51[0][0]+5,mt51[0][1],2);
+		hienThiToaDo(mt51[0][0]+5,mt51[0][1],0);
 		//toa do banh xe giua
 		outtextxy(15,290+15*1,"Banh xe giua");
 		hienThiToaDo(mt52[0][0]+5,mt52[0][1],1);
@@ -377,7 +377,7 @@ void tinhTien(){
 				}
 				else
 				{
-					cout<<xtam<<"\t"<<ytam<<endl;
+					cout<<xtam<<"\t t"<<ytam<<endl;
 				}
 			}
 		
