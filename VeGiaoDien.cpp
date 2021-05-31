@@ -246,7 +246,7 @@ void batDkClickChuot(button &a,int x,int y,button b[])
 		else if(xtam>=155&&xtam<=280&&ytam>=27&&ytam<=97)
 		{
 			cout<<"Tong 2D 2"<<endl;
-			tinhTien();
+			xuLi2D2();
 		}
 		else if(xtam>=25&&xtam<=108&&ytam>=119&&ytam<=189)
 		{

@@ -80,9 +80,9 @@ void veHinhNon(int x,int y,int z,int R,int h)
 	lineDDA(700,320,305,715,0);
 	lineDDA(700,320,1275,320,0);
 	setbkcolor(15);
-	outtextxy(680,20,"Y");
+	outtextxy(680,20,"Z");
 	outtextxy(1250,300,"X");
-	outtextxy(320,665,"Z");
+	outtextxy(320,665,"Y");
 	
 	brokenElipse(Xdoi,Ydoi,R,(sqrt(2)/4)*R,12);
 	lineDDA(Xdoi,Ydoi-h,Xdoi-R,Ydoi,12);
@@ -103,9 +103,9 @@ void veHinhCau(int x,int y,int z,int R)
 	lineDDA(700,320,305,715,0);
 	lineDDA(700,320,1275,320,0);
 	setbkcolor(15);
-	outtextxy(680,20,"Y");
+	outtextxy(680,20,"Z");
 	outtextxy(1250,300,"X");
-	outtextxy(320,665,"Z");
+	outtextxy(320,665,"Y");
 	
 	
 	circleBresenham(Xdoi,Ydoi,R,12);
@@ -126,9 +126,9 @@ void hamVeHinhNon()
 	lineDDA(700,320,1275,320,0);
 	setbkcolor(15);
 	settextstyle(DEFAULT_FONT,0, 1);
-	outtextxy(680,20,"Y");
+	outtextxy(680,20,"Z");
 	outtextxy(1250,300,"X");
-	outtextxy(320,665,"Z");
+	outtextxy(320,665,"Y");
 	setcolor(15);
 	
 	

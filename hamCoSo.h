@@ -14,3 +14,9 @@ void putpixel5DV(int x, int y, int color);
 void drawCircleMidpoint(int xc, int yc, int r, int color);
 void put8pixel(int xc, int yc, int x, int y, int color);
 void hienThiToaDo(double x, double y, int i);
+
+void lineDDANguoiDung(int x1,int y1, int x2,int y2,int c);
+void circleBresenhamNguoiDung(int x0,int y0,int r, int color);
+void putpixel5DVNguoiDung(int x, int y, int color);
+void elipseNguoiDung(int xcenter,int ycenter,int xradius,int yradius, int color);
+void floodfillNguoiDung(int x, int y, int mauBorder);

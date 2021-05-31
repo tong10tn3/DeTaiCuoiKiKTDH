@@ -5,21 +5,22 @@
 #include<math.h>
 #include <time.h>
 #include <sstream>
+#include "ve3D1.h"
 
 using namespace std;
 
-int banKinhMatTroi=50;
-int banKinhTraiDat=25;
+int banKinhMatTroi=10;
+int banKinhTraiDat=4;
 int mauMatTroi=12;// mau cam
 int mauTraiDat=2;//mau Xanh la
 int mauMatTrang=14;//mau Vang
-int banKinhMatTrang=10;
+int banKinhMatTrang=3;
 int mauCanhVeTinh=9;
 int mauTamVeTinh=13;
 int banKinhVeTinh=5;
 int mauDuoiThienThach1=9;
 int mauDuoiThienThach2=10;
-int banKinhThienThach=10;
+int banKinhThienThach=3;
 int mauThienThach=6;
 int mauNgoaiThienThach=12;
 
@@ -27,28 +28,29 @@ int mauNgoaiThienThach=12;
 
 void veMatTroi(int xTam, int yTam)
 {
-	circleBresenham(xTam,yTam,banKinhMatTroi,mauMatTroi);
+	circleBresenhamNguoiDung(xTam,yTam,banKinhMatTroi,mauMatTroi);
 	setfillstyle(1,mauMatTroi);
-	floodfill(xTam,yTam,mauMatTroi); 
+	int xKQ,yKQ;
+	doiNguoiDungsangMayTinh(xTam,yTam,790,360,xKQ,yKQ);
+	floodfill(xKQ,yKQ,mauMatTroi);
 }
-
 void veTraiDat(int xTam, int yTam)
 {
 	setfillstyle(1,11);
-	elipse(xTam,yTam,50,10,11);
-	floodfill(xTam,yTam,11); 
+	elipseNguoiDung(xTam,yTam,9,2,11);
+	floodfillNguoiDung(xTam,yTam,11); 
 	
-	circleBresenham(xTam,yTam,banKinhTraiDat,mauTraiDat);
+	circleBresenhamNguoiDung(xTam,yTam,banKinhTraiDat,mauTraiDat);
 	setfillstyle(1,mauTraiDat);
-	floodfill(xTam,yTam,mauTraiDat); 
+	floodfillNguoiDung(xTam,yTam,mauTraiDat); 
 	
 	
 }
 void veMatTrang(int xTam, int yTam)
 {
-	circleBresenham(xTam,yTam,banKinhMatTrang,mauMatTrang);
+	circleBresenhamNguoiDung(xTam,yTam,banKinhMatTrang,mauMatTrang);
 	setfillstyle(1,mauMatTrang);
-	floodfill(xTam,yTam,mauMatTrang); 
+	floodfillNguoiDung(xTam,yTam,mauMatTrang); 
 }
 
 // A cap mxn * B cap nxp = C cap mxp
@@ -118,7 +120,7 @@ char* doiSangChar(string text)
 string doiBanKinh(int x)
 {
 	ostringstream convertX;
-	convertX<<x/5;
+	convertX<<x;
 	string xDoi=convertX.str();
 	return xDoi;
 }
@@ -161,15 +163,15 @@ void PhepXoay1Diem(int xDiem,int yDiem,int xGoc,int yGoc, int gocQuay,int &xMoi,
 }
 void veThienThach(int x, int y, int gocQuay,int mauDuoi)
 {
-	int doDaiDuoi=60;
-	int doRongVanh=10;
-	circleBresenham(x,y,banKinhThienThach+doRongVanh,7);
+	int doDaiDuoi=15;
+	int doRongVanh=3;
+	circleBresenhamNguoiDung(x,y,banKinhThienThach+doRongVanh,7);
 	setfillstyle(SOLID_FILL,mauNgoaiThienThach);
-	floodfill(x,y,7);
+	floodfillNguoiDung(x,y,7);
 
-	circleBresenham(x,y,banKinhThienThach,7);
+	circleBresenhamNguoiDung(x,y,banKinhThienThach,7);
 	setfillstyle(SOLID_FILL,mauThienThach);
-	floodfill(x,y,7);
+	floodfillNguoiDung(x,y,7);
 	
 	int x1=x-banKinhThienThach-doDaiDuoi;
 	int y1=y-banKinhThienThach-doRongVanh;
@@ -209,47 +211,51 @@ void veThienThach(int x, int y, int gocQuay,int mauDuoi)
 	if(gocQuay<240&&gocQuay>130)
 	{
 		setcolor(15);
-		lineDDA(x1New,y1New,x4,y4,7);
-		lineDDA(x3New,y3New,x2,y2,7);
-		lineDDA(x1New,y1New,x5New,y5New,7);
-		lineDDA(x3New,y3New,x5New,y5New,7);
+		lineDDANguoiDung(x1New,y1New,x4,y4,7);
+		lineDDANguoiDung(x3New,y3New,x2,y2,7);
+		lineDDANguoiDung(x1New,y1New,x5New,y5New,7);
+		lineDDANguoiDung(x3New,y3New,x5New,y5New,7);
 	}
 	else
 	{
 		setcolor(15);
-		lineDDA(x1New,y1New,x2+2,y2,7);
-		lineDDA(x3New,y3New,x4+2,y4,7);
-		lineDDA(x1New,y1New,x5New,y5New,7);
-		lineDDA(x3New,y3New,x5New,y5New,7);
+		lineDDANguoiDung(x1New,y1New,x2+2,y2,7);
+		lineDDANguoiDung(x3New,y3New,x4+2,y4,7);
+		lineDDANguoiDung(x1New,y1New,x5New,y5New,7);
+		lineDDANguoiDung(x3New,y3New,x5New,y5New,7);
 	}
 	setfillstyle(SOLID_FILL,mauDuoi);
-	floodfill(x6New,y6New,7);
+	floodfillNguoiDung(x6New,y6New,7);
 	//ghi thong tin
 	setcolor(15);
 	setbkcolor(mauxanhgiongaokhoaccrush);
+	settextstyle(DEFAULT_FONT,0, 1);
 	outtextxy(100,475,"THIEN THACH");
 	float xKQ,yKQ;
-	doiMayTinhSangNguoiDung(x,y,790,360,xKQ,yKQ);
-	outtextxy(15,490,doiSangChar("X= "+doiToaDo(xKQ)));
-	outtextxy(15,505,doiSangChar("Y= "+doiToaDo(yKQ)));
+	
+	outtextxy(15,490,doiSangChar("X= "+doiToaDo(x)));
+	outtextxy(15,505,doiSangChar("Y= "+doiToaDo(y)));
 	
 	outtextxy(130,490,doiSangChar("BK in= "+doiBanKinh(banKinhThienThach)));
 	outtextxy(220,490,doiSangChar("BK out= "+doiBanKinh(banKinhThienThach+doRongVanh)));
-	
-	doiMayTinhSangNguoiDung(x1New,y1New,790,360,xKQ,yKQ);
-	outtextxy(15,520,doiSangChar("X1= "+doiToaDo(xKQ)));
-	outtextxy(15,535,doiSangChar("Y1= "+doiToaDo(yKQ)));
-	
-	doiMayTinhSangNguoiDung(x5New,y5New,790,360,xKQ,yKQ);
-	outtextxy(130,520,doiSangChar("X2= "+doiToaDo(xKQ)));
-	outtextxy(130,535,doiSangChar("Y2= "+doiToaDo(yKQ)));
-	
-	doiMayTinhSangNguoiDung(x3New,y3New,790,360,xKQ,yKQ);
-	outtextxy(220,520,doiSangChar("X3= "+doiToaDo(xKQ)));
-	outtextxy(220,535,doiSangChar("Y3= "+doiToaDo(yKQ)));
+
+	outtextxy(15,520,doiSangChar("X1= "+doiToaDo(x1)));
+	outtextxy(15,535,doiSangChar("Y1= "+doiToaDo(y1)));
+
+	outtextxy(130,520,doiSangChar("X2= "+doiToaDo(x5)));
+	outtextxy(130,535,doiSangChar("Y2= "+doiToaDo(y5)));
+
+	outtextxy(220,520,doiSangChar("X3= "+doiToaDo(x3)));
+	outtextxy(220,535,doiSangChar("Y3= "+doiToaDo(y3)));
 	
 }
-
+void veHeTruc()
+{
+	setcolor(5);
+	lineDDA1DV(790,6,790,714,5);
+	lineDDA1DV(306,360,1274,360,5);
+	setcolor(15);
+}
 
 void ghiToaDo( int x, int y, int i)
 {
@@ -288,18 +294,18 @@ void ghiToaDo( int x, int y, int i)
 
 void tinhTienThienThach1(int i)
 {
-	int xDau=400; int yDau=100;
-	int xCuoi=700; int yCuoi=650;
+	int xDau=-78; int yDau=52;
+	int xCuoi=22; int yCuoi=-68;
 	
 	double tanA=(yCuoi-yDau)/(xCuoi-xDau);
-	double gocQuay=360.0- atan(tanA)*(180/3.14159);
+	double gocQuay=360- atan(tanA)*(180/3.14159);
 	
 	double maTranThienThach[1][3]={{xDau,yDau,1}};
 	
 	double maTranTT[3][3]={
 		{1,0,0	},
 		{0,1,0	},
-		{500*i/31, 600*i/31, 1}
+		{(xCuoi-xDau)*i/31, (yCuoi-yDau)*i/31, 1}
 	};
 	double KQ[1][3];
 	nhan2MaTran(maTranThienThach,maTranTT,KQ,1,3,3);
@@ -310,8 +316,8 @@ void tinhTienThienThach1(int i)
 }
 void tinhTienThienThach2(int i)
 {
-	int xDau=875; int yDau=661;
-	int xCuoi=960; int yCuoi=54;
+	int xDau=17; int yDau=-60;
+	int xCuoi=34; int yCuoi=61;
 	
 	double tanA=(yCuoi-yDau)/(xCuoi-xDau);
 	double gocQuay=360.0- atan(tanA)*(180/3.14159);
@@ -353,11 +359,7 @@ void veVeTinh(int x , int y)
 	setcolor(mauTamVeTinh);
 	setfillstyle(SOLID_FILL,mauTamVeTinh);
 	pieslice(x,y,0,360,banKinhVeTinh);
-	
-	//x1 x+3*banKinhVeTinh,y-4*banKinhVeTinh
-	//x2 x+4*banKinhVeTinh+1,y-3*banKinhVeTinh+1
-	//x3 x-4*banKinhVeTinh,y+3*banKinhVeTinh
-	//x4 x-3*banKinhVeTinh+1,y+4*banKinhVeTinh+1
+
 	
 	setbkcolor(mauxanhgiongaokhoaccrush);
 	settextstyle(DEFAULT_FONT,0,1);
@@ -382,59 +384,57 @@ void veVeTinh(int x , int y)
 
 void veHanhTinhKhac()
 {
-	int x1=400;
-	int y1=600;
+	int x1=-78;
+	int y1=-48;
 	
-	elipse(x1,y1,50,10,6);
+	elipseNguoiDung(x1,y1,9,2,6);
 	setfillstyle(SOLID_FILL,6);
-	floodfill(x1,y1,6);
-	circleBresenham(x1,y1,20,14);
+	floodfillNguoiDung(x1,y1,6);
+	circleBresenhamNguoiDung(x1,y1,4,14);
 	setfillstyle(SOLID_FILL,14);
-	floodfill(x1,y1,14);
+	floodfillNguoiDung(x1,y1,14);
 	
 	
-	int x2=1150;
-	int y2=70;
-	elipse(x2,y2,50,10,12);
+	int x2=72;
+	int y2=58;
+	elipseNguoiDung(x2,y2,9,2,12);
 	setfillstyle(SOLID_FILL,12);
-	floodfill(x2,y2,12);
-	circleBresenham(x2,y2,20,1);
+	floodfillNguoiDung(x2,y2,12);
+	circleBresenhamNguoiDung(x2,y2,4,1);
 	setfillstyle(SOLID_FILL,1);
-	floodfill(x2,y2,1);
+	floodfillNguoiDung(x2,y2,1);
 	
-	int x4=388;
-	int y4=378;
-	elipse(x4,y4,50,10,10);
+	int x4=80;
+	int y4=-4;
+	elipseNguoiDung(x4,y4,9,2,10);
 	setfillstyle(SOLID_FILL,10);
-	floodfill(x4,y4,10);
-	circleBresenham(x4,y4,20,2);
+	floodfillNguoiDung(x4,y4,10);
+	circleBresenhamNguoiDung(x4,y4,4,2);
 	setfillstyle(SOLID_FILL,2);
-	floodfill(x4,y4,2);
+	floodfillNguoiDung(x4,y4,2);
 	
-	int x5= 1171;
-	int y5= 591;
-	elipse(x5,y5,50,10,9);
+	int x5= 76;
+	int y5= -46;
+	elipseNguoiDung(x5,y5,9,2,9);
 	setfillstyle(SOLID_FILL,9);
-	floodfill(x5,y5,9);
-	circleBresenham(x5,y5,20,3);
+	floodfillNguoiDung(x5,y5,9);
+	circleBresenhamNguoiDung(x5,y5,4,3);
 	setfillstyle(SOLID_FILL,3);
-	floodfill(x5,y5,3);
+	floodfillNguoiDung(x5,y5,3);
 }
 
 
 void ghiThongTin(int x,int y,int a, int b, int BK, int i, string tenVat)
 {
-	int xO=790;
-	int yO=360;
+
 	int cach=40;
 	int gocTen=280;
 	
 	outtextxy(100,gocTen+i*cach,doiSangChar(tenVat));
-	float toaDoX= roundf(((x-xO)/5.0) * 100) / 100;
-	float toaDoY= roundf(((y-yO)/5.0)* 100) / -100;
+
 
 	ostringstream convertX;
-	convertX<<toaDoX;
+	convertX<<x;
 	string toaDoXString="X= "+convertX.str();
 	char* toaDoXChar = new char[toaDoXString.size()];
 	copy(toaDoXString.begin(), toaDoXString.end(), toaDoXChar);
@@ -445,7 +445,7 @@ void ghiThongTin(int x,int y,int a, int b, int BK, int i, string tenVat)
 	settextstyle(DEFAULT_FONT,0,1);
 	
 	ostringstream convertY;
-	convertY<<toaDoY;
+	convertY<<y;
 	string toaDoYString="Y= "+convertY.str();
 		
 	char* toaDoYChar = new char[toaDoYString.size()];
@@ -455,11 +455,7 @@ void ghiThongTin(int x,int y,int a, int b, int BK, int i, string tenVat)
 	outtextxy(15,gocTen+i*cach+30,toaDoYChar);
 	settextstyle(DEFAULT_FONT,0,1);
 
-	if(tenVat!="VE TINH")
-	{
-		outtextxy(150,gocTen+i*cach+15,doiSangChar("BK= "+doiBanKinh(BK)));
-	}
-	else outtextxy(130,gocTen+i*cach+15,doiSangChar("BK= "+doiBanKinh(BK)));
+	outtextxy(130,gocTen+i*cach+15,doiSangChar("BK= "+doiBanKinh(BK)));
 	
 	if(a!=-1)
 	{
@@ -471,6 +467,8 @@ void ghiThongTin(int x,int y,int a, int b, int BK, int i, string tenVat)
 
 void xuLi2D1()
 {
+	int xTraiDat=0; int yTraiDat=46;
+	int xMatTrang=0; int yMatTrang=70;
 	
 	int XSao[500];
 	int YSao[500];
@@ -499,29 +497,17 @@ void xuLi2D1()
 			double gocQuay=i;
 			int xTraiDats;
 			int yTraiDats;
-			PhepXoay1Diem(790,590,790,360,gocQuay*180.0/3.14159,xTraiDats,yTraiDats);
-			
-			
-			//VETINH
-			double gocQuayVT=i*7 ;
-			
-			int xVeTinhs;
-			int yVeTinhs;
-			PhepXoay1Diem(790,610-10*banKinhVeTinh-45,790,590,gocQuayVT*180.0/3.14159,xVeTinhs,yVeTinhs);
-		
-			int xVeTinhs1;
-			int yVeTinhs1;
-			PhepXoay1Diem(xVeTinhs,yVeTinhs,790,360,gocQuay*180.0/3.14159,xVeTinhs1,yVeTinhs1);
-			
+			PhepXoay1Diem(xTraiDat,yTraiDat,0,0,gocQuay*180.0/3.14159,xTraiDats,yTraiDats);
+	
 			//MATTRANG
 			double gocQuayMT=-i*5;
 			int xMatTrangs;
 			int yMatTrangs;
-			PhepXoay1Diem(910,610,790,590,gocQuayMT*180.0/3.14159,xMatTrangs,yMatTrangs);
+			PhepXoay1Diem(xMatTrang,yMatTrang,xTraiDat,yTraiDat,gocQuayMT*180.0/3.14159,xMatTrangs,yMatTrangs);
 			
 			int xMatTrangs1;
 			int yMatTrangs1;
-			PhepXoay1Diem(xMatTrangs,yMatTrangs,790,360,gocQuay*180.0/3.14159,xMatTrangs1,yMatTrangs1);
+			PhepXoay1Diem(xMatTrangs,yMatTrangs,0,0,gocQuay*180.0/3.14159,xMatTrangs1,yMatTrangs1);
 
 			//VE 
 			setGiaoDienHoatDong(0);
@@ -531,10 +517,9 @@ void xuLi2D1()
 			circleBresenham(790,360,230,15);
 
 			veBauTroiSao(soLuong,XSao,YSao);
-			veMatTroi(790,360);
+			veMatTroi(0,0);
 			veTraiDat(xTraiDats,yTraiDats);
 			veMatTrang(xMatTrangs1,yMatTrangs1);
-			veVeTinh(xVeTinhs1,yVeTinhs1);
 			
 			
 			if(k<=31)
@@ -557,10 +542,8 @@ void xuLi2D1()
 			settextstyle(DEFAULT_FONT,0, 1);
 			
 			setbkcolor(mauxanhgiongaokhoaccrush);
-			
-			
+
 			//MAT TROI
-			
 			
 			outtextxy(100,gocTen,doiSangChar("MAT TROI"));
 			outtextxy(15,gocTen+15,"X= 0");
@@ -568,17 +551,15 @@ void xuLi2D1()
 			outtextxy(150,gocTen+15,doiSangChar("BK:"+doiBanKinh(banKinhMatTroi)));
 			
 			//TRAI DAT
-			ghiThongTin(xTraiDats,yTraiDats,50,10,banKinhTraiDat,1,"TRAI DAT");
+			ghiThongTin(xTraiDats,yTraiDats,9,2,banKinhTraiDat,1,"TRAI DAT");
 			
 			//MAT TRANG
 			ghiThongTin(xMatTrangs1,yMatTrangs1,-1,-1,banKinhMatTrang,2,"MAT TRANG");
 
-			// VE TINH
-			ghiThongTin(xVeTinhs1,yVeTinhs1,-1,-1,banKinhVeTinh,3,"VE TINH");
 			//HE TRUC TOA DO
 			setcolor(5);
-			line(790,6,790,714);
-			line(306,360,1274,360);
+			lineDDA1DV(790,6,790,714,5);
+			lineDDA1DV(306,360,1274,360,5);
 			setcolor(15);
 			
 		
@@ -592,7 +573,6 @@ void xuLi2D1()
 				if(xtam>=25&&xtam<=150&&ytam>=27&&ytam<=97)
 				{
 					kt=true;
-					
 					setactivepage(NULL);
 					setvisualpage(NULL);
 					setDoThi();

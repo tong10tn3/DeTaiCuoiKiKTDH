@@ -27,9 +27,9 @@ void veHinhHopChuNhat(int x,int y,int z,int d,int r,int c){
 	lineDDA(700,320,305,715,0);
 	lineDDA(700,320,1275,320,0);
 	setbkcolor(15);
-	outtextxy(680,20,"Y");
+	outtextxy(680,20,"Z");
 	outtextxy(1250,300,"X");
-	outtextxy(320,665,"Z");
+	outtextxy(320,665,"Y");
 	lineDDA(Xdoi, Ydoi - c, Xdoi + d, Ydoi - c,12);
 	lineDDA(Xdoi + d, Ydoi - c, Xdoi + d, Ydoi,12);
 	veNetDut(Xdoi + d, Ydoi, Xdoi, Ydoi);
@@ -54,9 +54,9 @@ void hamVeHinhHopChuNhat(){
 	lineDDA(700,320,1275,320,0);
 	setbkcolor(15);
 	settextstyle(DEFAULT_FONT,0, 1);
-	outtextxy(680,20,"Y");
+	outtextxy(680,20,"Z");
 	outtextxy(1250,300,"X");
-	outtextxy(320,665,"Z");
+	outtextxy(320,665,"Y");
 	setcolor(15);
 	setbkcolor(mauxanhgiongaokhoaccrush);
 	settextstyle(DEFAULT_FONT,0, 1);
